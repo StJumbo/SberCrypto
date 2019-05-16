@@ -1,5 +1,5 @@
 //
-//  NetworkService.h
+//  NewsJSONModel.h
 //  SberCrypto
 //
 //  Created by Сергей Грызин on 16/05/2019.
@@ -7,13 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-@class NewsModel;
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NetworkService : NSObject
-
--(void)getNewsArray: (void (^)(NSArray<NewsModel *> *))completion;
+@interface NewsJSONModel : NSObject
 
 @end
 

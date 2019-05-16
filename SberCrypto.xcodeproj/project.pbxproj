@@ -25,6 +25,7 @@
 		13BE0509228DAD57001EFAAA /* AuthorizationRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BE0508228DAD57001EFAAA /* AuthorizationRouter.m */; };
 		13BE050C228DC2A2001EFAAA /* FirebaseAuthService.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BE050B228DC2A2001EFAAA /* FirebaseAuthService.m */; };
 		13BE050F228DEE11001EFAAA /* AuthorizationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BE050E228DEE11001EFAAA /* AuthorizationView.m */; };
+		13BE0517228DFA5D001EFAAA /* NewsJSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BE0516228DFA5D001EFAAA /* NewsJSONModel.m */; };
 		18AE9CFB2D59D0743DFF6A1F /* libPods-SberCryptoUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78E292A63BDE6EBB85DE1FB3 /* libPods-SberCryptoUITests.a */; };
 		359944B1A25A91503B9AB4D4 /* libPods-SberCrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A7C8F50B686A5C629EB07B33 /* libPods-SberCrypto.a */; };
 		E267D0449018AB928CAF5B4F /* libPods-SberCryptoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C8B3891BCE68E13B039AB8A4 /* libPods-SberCryptoTests.a */; };
@@ -79,6 +80,8 @@
 		13BE050B228DC2A2001EFAAA /* FirebaseAuthService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirebaseAuthService.m; sourceTree = "<group>"; };
 		13BE050D228DEE11001EFAAA /* AuthorizationView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AuthorizationView.h; sourceTree = "<group>"; };
 		13BE050E228DEE11001EFAAA /* AuthorizationView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AuthorizationView.m; sourceTree = "<group>"; };
+		13BE0515228DFA5D001EFAAA /* NewsJSONModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsJSONModel.h; sourceTree = "<group>"; };
+		13BE0516228DFA5D001EFAAA /* NewsJSONModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsJSONModel.m; sourceTree = "<group>"; };
 		26E8E3722CDE87C3A7876B90 /* Pods-SberCrypto.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SberCrypto.release.xcconfig"; path = "Pods/Target Support Files/Pods-SberCrypto/Pods-SberCrypto.release.xcconfig"; sourceTree = "<group>"; };
 		78E292A63BDE6EBB85DE1FB3 /* libPods-SberCryptoUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SberCryptoUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AB53B8D08C94FE044091112 /* Pods-SberCryptoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SberCryptoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SberCryptoUITests/Pods-SberCryptoUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -305,6 +308,8 @@
 			children = (
 				13BE0501228DA61D001EFAAA /* NewsModel.h */,
 				13BE0502228DA61D001EFAAA /* NewsModel.m */,
+				13BE0515228DFA5D001EFAAA /* NewsJSONModel.h */,
+				13BE0516228DFA5D001EFAAA /* NewsJSONModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -565,6 +570,7 @@
 				13BE04F2228DA1D5001EFAAA /* NewsViewController.m in Sources */,
 				13BE0503228DA61D001EFAAA /* NewsModel.m in Sources */,
 				13BE04BF228D975F001EFAAA /* main.m in Sources */,
+				13BE0517228DFA5D001EFAAA /* NewsJSONModel.m in Sources */,
 				13BE050C228DC2A2001EFAAA /* FirebaseAuthService.m in Sources */,
 				13BE0509228DAD57001EFAAA /* AuthorizationRouter.m in Sources */,
 				13BE050F228DEE11001EFAAA /* AuthorizationView.m in Sources */,

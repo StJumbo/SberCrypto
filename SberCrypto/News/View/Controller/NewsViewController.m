@@ -8,6 +8,7 @@
 
 #import "NewsViewController.h"
 #import "NetworkService.h"
+#import "NewsModel.h"
 
 @interface NewsViewController ()
 
@@ -21,7 +22,12 @@
     self.view.backgroundColor = UIColor.blueColor;
     
     NetworkService *service = [NetworkService new];
-    [service getNewsArray];
+    [service getNewsArray:^(NSArray<NewsModel *> * _Nonnull newsArray) {
+        for(int i = 0; i < newsArray.count; i++)
+        {
+            NSLog(@"%@", newsArray[i].title);
+        }
+    }];
 }
 
 @end
