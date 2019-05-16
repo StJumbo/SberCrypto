@@ -8,12 +8,14 @@
 
 #import <Foundation/Foundation.h>
 @class NewsModel;
+@import UIKit;
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface NetworkService : NSObject
 
 -(void)getNewsArray: (void (^)(NSArray<NewsModel *> *))completion;
+- (void)getImageFromURL:(NSString *)picURL completion:(void (^)(UIImage *))completion;
 
 @end
 

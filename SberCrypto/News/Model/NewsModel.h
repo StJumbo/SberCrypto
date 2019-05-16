@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+@import UIKit;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -16,6 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) NSString *imageURL;
 @property (nonatomic) NSString *articleURL;
 @property (nonatomic) NSInteger *date;
+@property (nonatomic) UIImage *image;
 
 @end
 

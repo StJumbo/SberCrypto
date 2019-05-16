@@ -9,6 +9,7 @@
 #import "NetworkService.h"
 #import "NetworkHelper.h"
 #import "NewsModel.h"
+@import UIKit;
 
 @implementation NetworkService
 
@@ -26,7 +27,7 @@
         else
         {
             NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
-            NSLog(@"%@", jsonDict);
+//            NSLog(@"%@", jsonDict);
             completion([self parseNewsJSONFromArray:jsonDict[@"Data"]]);
         }
     }];
@@ -44,11 +45,40 @@
         news.title = array[i][@"title"];
         news.imageURL = array[i][@"imageurl"];
         news.articleURL = array[i][@"url"];
+        news.image = nil;
         
         [newsArray addObject:news];
     }
     
     return newsArray;
+}
+
+#pragma mark - Getting image
+
+- (void)getImageFromURL:(NSString *)picURL completion:(void (^)(UIImage *))completion
+{
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:picURL]];
+    NSURLSession *session = [NSURLSession sharedSession];
+    
+    NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        if (error)
+        {
+            completion(nil);
+        }
+        
+        UIImage *image = [[UIImage alloc] initWithData:data];
+        if (image)
+        {
+            completion(image);
+        }
+        else
+        {
+            completion(nil);
+        }
+        
+    }];
+    
+    [dataTask resume];
 }
 
 @end
