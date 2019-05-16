@@ -23,8 +23,9 @@
     
     UIWindow *window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
     AuthViewController *rootVC = [AuthViewController new];
+    UINavigationController *navVC = [[UINavigationController alloc] initWithRootViewController:rootVC];
     
-    window.rootViewController = rootVC;
+    window.rootViewController = navVC;
     self.window = window;
     [self.window makeKeyAndVisible];
     

@@ -7,10 +7,16 @@
 //
 
 #import "AuthViewController.h"
+#import "AuthorizationRouter.h"
 #import "NewsViewController.h"
+#import "FirebaseAuthService.h"
+#import "AuthorizationView.h"
 @import Firebase;
 
 @interface AuthViewController ()
+
+@property (nonatomic) AuthorizationRouter *router;
+@property (nonatomic) FirebaseAuthService *authService;
 
 @end
 
@@ -19,20 +25,24 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.backgroundColor = UIColor.greenColor;
+    self.view = [AuthorizationView makeAuthorizationScreen];
+    self.navigationController.navigationBarHidden = YES;
     
-    [[FIRAuth auth] signInWithEmail:@"test@test.ru" password:@"qwerty" completion:^(FIRAuthDataResult * _Nullable authResult, NSError * _Nullable error) {
+    AuthorizationRouter *router = [AuthorizationRouter new];
+    [router setNavVC:self.navigationController];
+    self.router = router;
+    
+    FirebaseAuthService *authService = [FirebaseAuthService new];
+    self.authService = authService;
+    
+    [self.authService signInWithEmail:@"test@test.ru" andPassword:@"qwerty" :^(FIRAuthDataResult * _Nullable authResult, NSError * _Nullable error) {
         if (error)
         {
-            NSLog(@"zhopa");
+            [self.router signInNeeded];
         }
         else
         {
-            NSLog(@"1111111111111111111111111111\n%@", authResult.user.uid);
-            self.view.backgroundColor = UIColor.yellowColor;
-            
-            NewsViewController *nextVC = [NewsViewController new];
-            [self presentViewController:nextVC animated:YES completion:nil];
+            [self.router authSucceeded];
         }
     }];
 }

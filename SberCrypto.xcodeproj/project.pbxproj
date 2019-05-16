@@ -22,6 +22,9 @@
 		13BE04FC228DA51F001EFAAA /* NetworkHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BE04FB228DA51F001EFAAA /* NetworkHelper.m */; };
 		13BE04FF228DA5E9001EFAAA /* NetworkService.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BE04FE228DA5E9001EFAAA /* NetworkService.m */; };
 		13BE0503228DA61D001EFAAA /* NewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BE0502228DA61D001EFAAA /* NewsModel.m */; };
+		13BE0509228DAD57001EFAAA /* AuthorizationRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BE0508228DAD57001EFAAA /* AuthorizationRouter.m */; };
+		13BE050C228DC2A2001EFAAA /* FirebaseAuthService.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BE050B228DC2A2001EFAAA /* FirebaseAuthService.m */; };
+		13BE050F228DEE11001EFAAA /* AuthorizationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BE050E228DEE11001EFAAA /* AuthorizationView.m */; };
 		18AE9CFB2D59D0743DFF6A1F /* libPods-SberCryptoUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78E292A63BDE6EBB85DE1FB3 /* libPods-SberCryptoUITests.a */; };
 		359944B1A25A91503B9AB4D4 /* libPods-SberCrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A7C8F50B686A5C629EB07B33 /* libPods-SberCrypto.a */; };
 		E267D0449018AB928CAF5B4F /* libPods-SberCryptoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C8B3891BCE68E13B039AB8A4 /* libPods-SberCryptoTests.a */; };
@@ -70,6 +73,12 @@
 		13BE04FE228DA5E9001EFAAA /* NetworkService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkService.m; sourceTree = "<group>"; };
 		13BE0501228DA61D001EFAAA /* NewsModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsModel.h; sourceTree = "<group>"; };
 		13BE0502228DA61D001EFAAA /* NewsModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsModel.m; sourceTree = "<group>"; };
+		13BE0507228DAD57001EFAAA /* AuthorizationRouter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AuthorizationRouter.h; sourceTree = "<group>"; };
+		13BE0508228DAD57001EFAAA /* AuthorizationRouter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AuthorizationRouter.m; sourceTree = "<group>"; };
+		13BE050A228DC2A2001EFAAA /* FirebaseAuthService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirebaseAuthService.h; sourceTree = "<group>"; };
+		13BE050B228DC2A2001EFAAA /* FirebaseAuthService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirebaseAuthService.m; sourceTree = "<group>"; };
+		13BE050D228DEE11001EFAAA /* AuthorizationView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AuthorizationView.h; sourceTree = "<group>"; };
+		13BE050E228DEE11001EFAAA /* AuthorizationView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AuthorizationView.m; sourceTree = "<group>"; };
 		26E8E3722CDE87C3A7876B90 /* Pods-SberCrypto.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SberCrypto.release.xcconfig"; path = "Pods/Target Support Files/Pods-SberCrypto/Pods-SberCrypto.release.xcconfig"; sourceTree = "<group>"; };
 		78E292A63BDE6EBB85DE1FB3 /* libPods-SberCryptoUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SberCryptoUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AB53B8D08C94FE044091112 /* Pods-SberCryptoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SberCryptoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SberCryptoUITests/Pods-SberCryptoUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -134,9 +143,9 @@
 		13BE04AB228D975B001EFAAA /* SberCrypto */ = {
 			isa = PBXGroup;
 			children = (
-				13BE04F3228DA1DA001EFAAA /* News */,
 				13BE04AC228D975B001EFAAA /* AppDelegate.h */,
 				13BE04AD228D975B001EFAAA /* AppDelegate.m */,
+				13BE04F3228DA1DA001EFAAA /* News */,
 				13BE04EF228DA1A9001EFAAA /* AuthModule */,
 				13BE04B8228D975F001EFAAA /* Assets.xcassets */,
 				13BE04BA228D975F001EFAAA /* LaunchScreen.storyboard */,
@@ -188,6 +197,8 @@
 		13BE04EA228D9AA0001EFAAA /* View */ = {
 			isa = PBXGroup;
 			children = (
+				13BE050D228DEE11001EFAAA /* AuthorizationView.h */,
+				13BE050E228DEE11001EFAAA /* AuthorizationView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -204,6 +215,8 @@
 		13BE04ED228D9ABE001EFAAA /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				13BE050A228DC2A2001EFAAA /* FirebaseAuthService.h */,
+				13BE050B228DC2A2001EFAAA /* FirebaseAuthService.m */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -211,6 +224,8 @@
 		13BE04EE228D9AC9001EFAAA /* Router */ = {
 			isa = PBXGroup;
 			children = (
+				13BE0507228DAD57001EFAAA /* AuthorizationRouter.h */,
+				13BE0508228DAD57001EFAAA /* AuthorizationRouter.m */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -550,6 +565,9 @@
 				13BE04F2228DA1D5001EFAAA /* NewsViewController.m in Sources */,
 				13BE0503228DA61D001EFAAA /* NewsModel.m in Sources */,
 				13BE04BF228D975F001EFAAA /* main.m in Sources */,
+				13BE050C228DC2A2001EFAAA /* FirebaseAuthService.m in Sources */,
+				13BE0509228DAD57001EFAAA /* AuthorizationRouter.m in Sources */,
+				13BE050F228DEE11001EFAAA /* AuthorizationView.m in Sources */,
 				13BE04FF228DA5E9001EFAAA /* NetworkService.m in Sources */,
 				13BE04B7228D975B001EFAAA /* SberCrypto.xcdatamodeld in Sources */,
 			);

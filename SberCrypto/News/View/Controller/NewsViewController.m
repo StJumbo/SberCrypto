@@ -18,6 +18,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.view.backgroundColor = UIColor.blueColor;
+    
     NetworkService *service = [NetworkService new];
     [service getNewsArray];
 }
