@@ -8,13 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		13BE04AE228D975B001EFAAA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BE04AD228D975B001EFAAA /* AppDelegate.m */; };
-		13BE04B1228D975B001EFAAA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BE04B0228D975B001EFAAA /* ViewController.m */; };
 		13BE04B7228D975B001EFAAA /* SberCrypto.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 13BE04B5228D975B001EFAAA /* SberCrypto.xcdatamodeld */; };
 		13BE04B9228D975F001EFAAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13BE04B8228D975F001EFAAA /* Assets.xcassets */; };
 		13BE04BC228D975F001EFAAA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13BE04BA228D975F001EFAAA /* LaunchScreen.storyboard */; };
 		13BE04BF228D975F001EFAAA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BE04BE228D975F001EFAAA /* main.m */; };
 		13BE04C9228D975F001EFAAA /* SberCryptoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BE04C8228D975F001EFAAA /* SberCryptoTests.m */; };
 		13BE04D4228D975F001EFAAA /* SberCryptoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BE04D3228D975F001EFAAA /* SberCryptoUITests.m */; };
+		13BE04E2228D988C001EFAAA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 13BE04E1228D988C001EFAAA /* GoogleService-Info.plist */; };
+		13BE04E3228D988C001EFAAA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 13BE04E1228D988C001EFAAA /* GoogleService-Info.plist */; };
+		13BE04E4228D988C001EFAAA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 13BE04E1228D988C001EFAAA /* GoogleService-Info.plist */; };
+		13BE04E7228D9A7E001EFAAA /* AuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BE04E6228D9A7E001EFAAA /* AuthViewController.m */; };
+		13BE04F2228DA1D5001EFAAA /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BE04F1228DA1D5001EFAAA /* NewsViewController.m */; };
+		13BE04FC228DA51F001EFAAA /* NetworkHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BE04FB228DA51F001EFAAA /* NetworkHelper.m */; };
+		13BE04FF228DA5E9001EFAAA /* NetworkService.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BE04FE228DA5E9001EFAAA /* NetworkService.m */; };
+		13BE0503228DA61D001EFAAA /* NewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BE0502228DA61D001EFAAA /* NewsModel.m */; };
+		18AE9CFB2D59D0743DFF6A1F /* libPods-SberCryptoUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78E292A63BDE6EBB85DE1FB3 /* libPods-SberCryptoUITests.a */; };
+		359944B1A25A91503B9AB4D4 /* libPods-SberCrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A7C8F50B686A5C629EB07B33 /* libPods-SberCrypto.a */; };
+		E267D0449018AB928CAF5B4F /* libPods-SberCryptoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C8B3891BCE68E13B039AB8A4 /* libPods-SberCryptoTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,8 +48,6 @@
 		13BE04A9228D975B001EFAAA /* SberCrypto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SberCrypto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13BE04AC228D975B001EFAAA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		13BE04AD228D975B001EFAAA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		13BE04AF228D975B001EFAAA /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		13BE04B0228D975B001EFAAA /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		13BE04B6228D975B001EFAAA /* SberCrypto.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SberCrypto.xcdatamodel; sourceTree = "<group>"; };
 		13BE04B8228D975F001EFAAA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		13BE04BB228D975F001EFAAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +59,26 @@
 		13BE04CF228D975F001EFAAA /* SberCryptoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SberCryptoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		13BE04D3228D975F001EFAAA /* SberCryptoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SberCryptoUITests.m; sourceTree = "<group>"; };
 		13BE04D5228D975F001EFAAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		13BE04E1228D988C001EFAAA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		13BE04E5228D9A7E001EFAAA /* AuthViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AuthViewController.h; sourceTree = "<group>"; };
+		13BE04E6228D9A7E001EFAAA /* AuthViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AuthViewController.m; sourceTree = "<group>"; };
+		13BE04F0228DA1D5001EFAAA /* NewsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsViewController.h; sourceTree = "<group>"; };
+		13BE04F1228DA1D5001EFAAA /* NewsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsViewController.m; sourceTree = "<group>"; };
+		13BE04FA228DA51F001EFAAA /* NetworkHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkHelper.h; sourceTree = "<group>"; };
+		13BE04FB228DA51F001EFAAA /* NetworkHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkHelper.m; sourceTree = "<group>"; };
+		13BE04FD228DA5E9001EFAAA /* NetworkService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkService.h; sourceTree = "<group>"; };
+		13BE04FE228DA5E9001EFAAA /* NetworkService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkService.m; sourceTree = "<group>"; };
+		13BE0501228DA61D001EFAAA /* NewsModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsModel.h; sourceTree = "<group>"; };
+		13BE0502228DA61D001EFAAA /* NewsModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsModel.m; sourceTree = "<group>"; };
+		26E8E3722CDE87C3A7876B90 /* Pods-SberCrypto.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SberCrypto.release.xcconfig"; path = "Pods/Target Support Files/Pods-SberCrypto/Pods-SberCrypto.release.xcconfig"; sourceTree = "<group>"; };
+		78E292A63BDE6EBB85DE1FB3 /* libPods-SberCryptoUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SberCryptoUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7AB53B8D08C94FE044091112 /* Pods-SberCryptoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SberCryptoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SberCryptoUITests/Pods-SberCryptoUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		9BC382F9C0732D4E929AA747 /* Pods-SberCryptoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SberCryptoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SberCryptoTests/Pods-SberCryptoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		9D6DEB9BD541DE089F5E35FD /* Pods-SberCryptoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SberCryptoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SberCryptoUITests/Pods-SberCryptoUITests.release.xcconfig"; sourceTree = "<group>"; };
+		A55451C98A4BDA5CE971BAA0 /* Pods-SberCryptoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SberCryptoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SberCryptoTests/Pods-SberCryptoTests.release.xcconfig"; sourceTree = "<group>"; };
+		A7C8F50B686A5C629EB07B33 /* libPods-SberCrypto.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SberCrypto.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C659D9CCE69A3E8124A634E6 /* Pods-SberCrypto.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SberCrypto.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SberCrypto/Pods-SberCrypto.debug.xcconfig"; sourceTree = "<group>"; };
+		C8B3891BCE68E13B039AB8A4 /* libPods-SberCryptoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SberCryptoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				359944B1A25A91503B9AB4D4 /* libPods-SberCrypto.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E267D0449018AB928CAF5B4F /* libPods-SberCryptoTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,6 +102,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18AE9CFB2D59D0743DFF6A1F /* libPods-SberCryptoUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +116,8 @@
 				13BE04C7228D975F001EFAAA /* SberCryptoTests */,
 				13BE04D2228D975F001EFAAA /* SberCryptoUITests */,
 				13BE04AA228D975B001EFAAA /* Products */,
+				5963389309E87542F3B25CD2 /* Pods */,
+				3148674EBBB5B1457DF2EB57 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,10 +134,10 @@
 		13BE04AB228D975B001EFAAA /* SberCrypto */ = {
 			isa = PBXGroup;
 			children = (
+				13BE04F3228DA1DA001EFAAA /* News */,
 				13BE04AC228D975B001EFAAA /* AppDelegate.h */,
 				13BE04AD228D975B001EFAAA /* AppDelegate.m */,
-				13BE04AF228D975B001EFAAA /* ViewController.h */,
-				13BE04B0228D975B001EFAAA /* ViewController.m */,
+				13BE04EF228DA1A9001EFAAA /* AuthModule */,
 				13BE04B8228D975F001EFAAA /* Assets.xcassets */,
 				13BE04BA228D975F001EFAAA /* LaunchScreen.storyboard */,
 				13BE04BD228D975F001EFAAA /* Info.plist */,
@@ -119,6 +152,7 @@
 			children = (
 				13BE04C8228D975F001EFAAA /* SberCryptoTests.m */,
 				13BE04CA228D975F001EFAAA /* Info.plist */,
+				13BE04E1228D988C001EFAAA /* GoogleService-Info.plist */,
 			);
 			path = SberCryptoTests;
 			sourceTree = "<group>";
@@ -132,6 +166,157 @@
 			path = SberCryptoUITests;
 			sourceTree = "<group>";
 		};
+		13BE04E8228D9A89001EFAAA /* Authorization */ = {
+			isa = PBXGroup;
+			children = (
+				13BE04EB228D9AA8001EFAAA /* Presenter */,
+				13BE04EA228D9AA0001EFAAA /* View */,
+				13BE04E9228D9A96001EFAAA /* Controller */,
+			);
+			path = Authorization;
+			sourceTree = "<group>";
+		};
+		13BE04E9228D9A96001EFAAA /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				13BE04E5228D9A7E001EFAAA /* AuthViewController.h */,
+				13BE04E6228D9A7E001EFAAA /* AuthViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		13BE04EA228D9AA0001EFAAA /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		13BE04EB228D9AA8001EFAAA /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				13BE04EE228D9AC9001EFAAA /* Router */,
+				13BE04ED228D9ABE001EFAAA /* Service */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		13BE04ED228D9ABE001EFAAA /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		13BE04EE228D9AC9001EFAAA /* Router */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		13BE04EF228DA1A9001EFAAA /* AuthModule */ = {
+			isa = PBXGroup;
+			children = (
+				13BE04F9228DA342001EFAAA /* SignUp */,
+				13BE04F8228DA339001EFAAA /* SignIn */,
+				13BE04E8228D9A89001EFAAA /* Authorization */,
+			);
+			path = AuthModule;
+			sourceTree = "<group>";
+		};
+		13BE04F3228DA1DA001EFAAA /* News */ = {
+			isa = PBXGroup;
+			children = (
+				13BE0500228DA60D001EFAAA /* Model */,
+				13BE04F6228DA2F7001EFAAA /* Presenter */,
+				13BE04F5228DA2F2001EFAAA /* View */,
+			);
+			path = News;
+			sourceTree = "<group>";
+		};
+		13BE04F4228DA1F2001EFAAA /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				13BE04F0228DA1D5001EFAAA /* NewsViewController.h */,
+				13BE04F1228DA1D5001EFAAA /* NewsViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		13BE04F5228DA2F2001EFAAA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				13BE04F4228DA1F2001EFAAA /* Controller */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		13BE04F6228DA2F7001EFAAA /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				13BE04F7228DA303001EFAAA /* Service */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		13BE04F7228DA303001EFAAA /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				13BE04FA228DA51F001EFAAA /* NetworkHelper.h */,
+				13BE04FB228DA51F001EFAAA /* NetworkHelper.m */,
+				13BE04FD228DA5E9001EFAAA /* NetworkService.h */,
+				13BE04FE228DA5E9001EFAAA /* NetworkService.m */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		13BE04F8228DA339001EFAAA /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SignIn;
+			sourceTree = "<group>";
+		};
+		13BE04F9228DA342001EFAAA /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		13BE0500228DA60D001EFAAA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				13BE0501228DA61D001EFAAA /* NewsModel.h */,
+				13BE0502228DA61D001EFAAA /* NewsModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3148674EBBB5B1457DF2EB57 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A7C8F50B686A5C629EB07B33 /* libPods-SberCrypto.a */,
+				C8B3891BCE68E13B039AB8A4 /* libPods-SberCryptoTests.a */,
+				78E292A63BDE6EBB85DE1FB3 /* libPods-SberCryptoUITests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5963389309E87542F3B25CD2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C659D9CCE69A3E8124A634E6 /* Pods-SberCrypto.debug.xcconfig */,
+				26E8E3722CDE87C3A7876B90 /* Pods-SberCrypto.release.xcconfig */,
+				9BC382F9C0732D4E929AA747 /* Pods-SberCryptoTests.debug.xcconfig */,
+				A55451C98A4BDA5CE971BAA0 /* Pods-SberCryptoTests.release.xcconfig */,
+				7AB53B8D08C94FE044091112 /* Pods-SberCryptoUITests.debug.xcconfig */,
+				9D6DEB9BD541DE089F5E35FD /* Pods-SberCryptoUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -139,9 +324,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13BE04D8228D975F001EFAAA /* Build configuration list for PBXNativeTarget "SberCrypto" */;
 			buildPhases = (
+				91FA0B828D084884CE1894A2 /* [CP] Check Pods Manifest.lock */,
 				13BE04A5228D975B001EFAAA /* Sources */,
 				13BE04A6228D975B001EFAAA /* Frameworks */,
 				13BE04A7228D975B001EFAAA /* Resources */,
+				6A262CBFA85D2CE9E769301C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -156,6 +343,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13BE04DB228D975F001EFAAA /* Build configuration list for PBXNativeTarget "SberCryptoTests" */;
 			buildPhases = (
+				95E991C95D21185A01640277 /* [CP] Check Pods Manifest.lock */,
 				13BE04C0228D975F001EFAAA /* Sources */,
 				13BE04C1228D975F001EFAAA /* Frameworks */,
 				13BE04C2228D975F001EFAAA /* Resources */,
@@ -174,6 +362,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13BE04DE228D975F001EFAAA /* Build configuration list for PBXNativeTarget "SberCryptoUITests" */;
 			buildPhases = (
+				C99174E8981402F66560A720 /* [CP] Check Pods Manifest.lock */,
 				13BE04CB228D975F001EFAAA /* Sources */,
 				13BE04CC228D975F001EFAAA /* Frameworks */,
 				13BE04CD228D975F001EFAAA /* Resources */,
@@ -237,6 +426,7 @@
 			files = (
 				13BE04BC228D975F001EFAAA /* LaunchScreen.storyboard in Resources */,
 				13BE04B9228D975F001EFAAA /* Assets.xcassets in Resources */,
+				13BE04E2228D988C001EFAAA /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,6 +434,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13BE04E3228D988C001EFAAA /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,19 +442,115 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13BE04E4228D988C001EFAAA /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6A262CBFA85D2CE9E769301C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SberCrypto/Pods-SberCrypto-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseFirestore/gRPCCertificates.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/gRPCCertificates.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SberCrypto/Pods-SberCrypto-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		91FA0B828D084884CE1894A2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SberCrypto-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		95E991C95D21185A01640277 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SberCryptoTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C99174E8981402F66560A720 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SberCryptoUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		13BE04A5228D975B001EFAAA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				13BE04B1228D975B001EFAAA /* ViewController.m in Sources */,
+				13BE04E7228D9A7E001EFAAA /* AuthViewController.m in Sources */,
 				13BE04AE228D975B001EFAAA /* AppDelegate.m in Sources */,
+				13BE04FC228DA51F001EFAAA /* NetworkHelper.m in Sources */,
+				13BE04F2228DA1D5001EFAAA /* NewsViewController.m in Sources */,
+				13BE0503228DA61D001EFAAA /* NewsModel.m in Sources */,
 				13BE04BF228D975F001EFAAA /* main.m in Sources */,
+				13BE04FF228DA5E9001EFAAA /* NetworkService.m in Sources */,
 				13BE04B7228D975B001EFAAA /* SberCrypto.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -425,6 +712,7 @@
 		};
 		13BE04D9228D975F001EFAAA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C659D9CCE69A3E8124A634E6 /* Pods-SberCrypto.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -443,6 +731,7 @@
 		};
 		13BE04DA228D975F001EFAAA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 26E8E3722CDE87C3A7876B90 /* Pods-SberCrypto.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -461,6 +750,7 @@
 		};
 		13BE04DC228D975F001EFAAA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9BC382F9C0732D4E929AA747 /* Pods-SberCryptoTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -480,6 +770,7 @@
 		};
 		13BE04DD228D975F001EFAAA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A55451C98A4BDA5CE971BAA0 /* Pods-SberCryptoTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -499,6 +790,7 @@
 		};
 		13BE04DF228D975F001EFAAA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7AB53B8D08C94FE044091112 /* Pods-SberCryptoUITests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TM54XW2DUL;
@@ -517,6 +809,7 @@
 		};
 		13BE04E0228D975F001EFAAA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9D6DEB9BD541DE089F5E35FD /* Pods-SberCryptoUITests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TM54XW2DUL;

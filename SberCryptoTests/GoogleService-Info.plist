@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>526130200430-4ks3q3lcop2tb3km72t7221vvlnt39j2.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.526130200430-4ks3q3lcop2tb3km72t7221vvlnt39j2</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCTLsf0Wnw2a0Wvf73KlG04vIasSjQIYkQ</string>
+	<key>GCM_SENDER_ID</key>
+	<string>526130200430</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>ru.GryzinSA.SberCrypto</string>
+	<key>PROJECT_ID</key>
+	<string>sbercrypto</string>
+	<key>STORAGE_BUCKET</key>
+	<string>sbercrypto.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:526130200430:ios:b97ff2dbc56578ff</string>
+	<key>DATABASE_URL</key>
+	<string>https://sbercrypto.firebaseio.com</string>
+</dict>
+</plist>

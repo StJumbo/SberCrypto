@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "AuthViewController.h"
+@import Firebase;
 
 @interface AppDelegate ()
 
@@ -17,6 +19,15 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [FIRApp configure];
+    
+    UIWindow *window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
+    AuthViewController *rootVC = [AuthViewController new];
+    
+    window.rootViewController = rootVC;
+    self.window = window;
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 
