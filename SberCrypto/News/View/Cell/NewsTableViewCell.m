@@ -22,17 +22,14 @@
         
         self.titleLabel.numberOfLines = 0;
         
-        [self.contentView addSubview:_coverImageView];
-        [self.contentView addSubview:_titleLabel];
-        [self.contentView addSubview:_dateLabel];
+        [self.contentView addSubview:self.coverImageView];
+        [self.contentView addSubview:self.titleLabel];
+        [self.contentView addSubview:self.dateLabel];
         
         [self makeConstrainst];
         
-//        [self.coverImageView setBackgroundColor:UIColor.cyanColor];
-//        [self.titleLabel setBackgroundColor:UIColor.yellowColor];
-//        [self.dateLabel setBackgroundColor:UIColor.greenColor];
-        
         self.titleLabel.font = [UIFont systemFontOfSize:23.0f];
+        self.dateLabel.font = [UIFont systemFontOfSize:15.0f weight:UIFontWeightLight];
     }
     return self;
 }
@@ -44,26 +41,22 @@
     self.titleLabel.translatesAutoresizingMaskIntoConstraints = NO;
     self.dateLabel.translatesAutoresizingMaskIntoConstraints = NO;
     
-    NSLayoutConstraint *coverImageViewHeightConstraint = [[NSLayoutConstraint alloc] init];
-    coverImageViewHeightConstraint = [self.coverImageView.heightAnchor constraintLessThanOrEqualToConstant:200.f];
-    [coverImageViewHeightConstraint setPriority:UILayoutPriorityDefaultHigh];
-    
     [NSLayoutConstraint activateConstraints:@[
-                                              [self.coverImageView.topAnchor constraintEqualToAnchor:self.topAnchor],
-                                              [self.coverImageView.rightAnchor constraintEqualToAnchor:self.rightAnchor],
-                                              [self.coverImageView.leftAnchor constraintEqualToAnchor:self.leftAnchor],
+                                              [self.coverImageView.topAnchor constraintEqualToAnchor:self.contentView.topAnchor],
+                                              [self.coverImageView.rightAnchor constraintEqualToAnchor:self.contentView.rightAnchor],
+                                              [self.coverImageView.leftAnchor constraintEqualToAnchor:self.contentView.leftAnchor],
                                               [self.coverImageView.heightAnchor constraintEqualToConstant:200.0f],
-//                                              coverImageViewHeightConstraint,
                                               
-                                              [self.titleLabel.topAnchor constraintEqualToAnchor:self.coverImageView.bottomAnchor],
-                                              [self.titleLabel.trailingAnchor constraintEqualToAnchor:self.trailingAnchor],
-                                              [self.titleLabel.leadingAnchor constraintEqualToAnchor:self.leadingAnchor],
+                                              [self.dateLabel.topAnchor constraintEqualToAnchor:self.coverImageView.bottomAnchor],
+                                              [self.dateLabel.trailingAnchor constraintEqualToAnchor:self.contentView.trailingAnchor constant: -2.0f],
+                                              [self.dateLabel.leadingAnchor constraintEqualToAnchor:self.contentView.leadingAnchor constant: 2.0f],
                                               
-                                              [self.dateLabel.topAnchor constraintEqualToAnchor:self.titleLabel.bottomAnchor],
-                                              [self.dateLabel.trailingAnchor constraintEqualToAnchor:self.trailingAnchor],
-                                              [self.dateLabel.leadingAnchor constraintEqualToAnchor:self.leadingAnchor],
-                                              [self.dateLabel.bottomAnchor constraintEqualToAnchor:self.bottomAnchor]
+                                              [self.titleLabel.topAnchor constraintEqualToAnchor:self.dateLabel.bottomAnchor],
+                                              [self.titleLabel.trailingAnchor constraintEqualToAnchor:self.dateLabel.trailingAnchor],
+                                              [self.titleLabel.leadingAnchor constraintEqualToAnchor:self.dateLabel.leadingAnchor],
+                                              [self.titleLabel.bottomAnchor constraintEqualToAnchor:self.contentView.bottomAnchor constant: -8.0f]
                                               ]];
+    
 }
 
 - (void)prepareForReuse

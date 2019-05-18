@@ -41,7 +41,8 @@
     for (int i = 0; i < array.count; i++)
     {
         NewsModel *news = [NewsModel new];
-        news.date = (NSInteger)array[i][@"published_on"];
+        news.date = array[i][@"published_on"];
+        news.ID = array[i][@"id"];
         news.title = array[i][@"title"];
         news.imageURL = array[i][@"imageurl"];
         news.articleURL = array[i][@"url"];

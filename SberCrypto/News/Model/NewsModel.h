@@ -16,7 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) NSString *title;
 @property (nonatomic) NSString *imageURL;
 @property (nonatomic) NSString *articleURL;
-@property (nonatomic) NSInteger *date;
+@property (nonatomic) NSString *ID;
+@property (nonatomic) NSString *date;
 @property (nonatomic) UIImage *image;
 
 @end

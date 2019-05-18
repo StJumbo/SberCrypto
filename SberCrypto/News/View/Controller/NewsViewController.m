@@ -32,8 +32,6 @@
     [self.tableView setTranslatesAutoresizingMaskIntoConstraints:NO];
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
-    [self.tableView setRowHeight:UITableViewAutomaticDimension];
-    [self.tableView setEstimatedRowHeight:0.0f];
 
 }
 
@@ -69,26 +67,18 @@
                 cropImage = [cropImage imageByCroppingToRect:CGRectMake(0.0f, 100.0f, cell.coverImageView.bounds.size.width, 200.0f)];
                 UIImage *image = [UIImage imageWithCIImage:cropImage];
                 cell.coverImageView.image = image;
-                cell.coverImageView.contentMode = UIViewContentModeScaleAspectFit;
                 self.newsArray[indexPath.item].image = image;
-
             });
         }];
     }
     
-    cell.titleLabel.text = articleForCell.title;
-//    NSString *dateString = [NSString stringWithFormat:@"%d", articleForCell.date];
-//    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-//    NSDate *dateFromString = [myDateFormatter date
-    cell.dateLabel.text = @"qqqqqqqqq";
+    cell.titleLabel.text = [NSString stringWithFormat:@"\t%@", articleForCell.title];
+    NSString *dateString = [NSString stringWithFormat:@"Date: %@", articleForCell.date];
+    
+    cell.dateLabel.text = dateString;
     [cell makeConstrainst];
     
     return cell;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return 300.0f;
 }
 
 @end
