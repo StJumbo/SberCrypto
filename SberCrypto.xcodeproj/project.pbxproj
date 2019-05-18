@@ -17,13 +17,9 @@
 		13BE04E2228D988C001EFAAA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 13BE04E1228D988C001EFAAA /* GoogleService-Info.plist */; };
 		13BE04E3228D988C001EFAAA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 13BE04E1228D988C001EFAAA /* GoogleService-Info.plist */; };
 		13BE04E4228D988C001EFAAA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 13BE04E1228D988C001EFAAA /* GoogleService-Info.plist */; };
-		13BE04E7228D9A7E001EFAAA /* AuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BE04E6228D9A7E001EFAAA /* AuthViewController.m */; };
 		13BE04FC228DA51F001EFAAA /* NetworkHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BE04FB228DA51F001EFAAA /* NetworkHelper.m */; };
 		13BE04FF228DA5E9001EFAAA /* NetworkService.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BE04FE228DA5E9001EFAAA /* NetworkService.m */; };
 		13BE0503228DA61D001EFAAA /* NewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BE0502228DA61D001EFAAA /* NewsModel.m */; };
-		13BE0509228DAD57001EFAAA /* AuthorizationRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BE0508228DAD57001EFAAA /* AuthorizationRouter.m */; };
-		13BE050C228DC2A2001EFAAA /* FirebaseAuthService.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BE050B228DC2A2001EFAAA /* FirebaseAuthService.m */; };
-		13BE050F228DEE11001EFAAA /* AuthorizationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BE050E228DEE11001EFAAA /* AuthorizationView.m */; };
 		13BE0517228DFA5D001EFAAA /* NewsJSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BE0516228DFA5D001EFAAA /* NewsJSONModel.m */; };
 		13BE051B228DFFB1001EFAAA /* NewsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BE051A228DFFB1001EFAAA /* NewsTableViewCell.m */; };
 		13BE051E228E03C9001EFAAA /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BE051D228E03C9001EFAAA /* NewsViewController.m */; };
@@ -65,20 +61,12 @@
 		13BE04D3228D975F001EFAAA /* SberCryptoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SberCryptoUITests.m; sourceTree = "<group>"; };
 		13BE04D5228D975F001EFAAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		13BE04E1228D988C001EFAAA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		13BE04E5228D9A7E001EFAAA /* AuthViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AuthViewController.h; sourceTree = "<group>"; };
-		13BE04E6228D9A7E001EFAAA /* AuthViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AuthViewController.m; sourceTree = "<group>"; };
 		13BE04FA228DA51F001EFAAA /* NetworkHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkHelper.h; sourceTree = "<group>"; };
 		13BE04FB228DA51F001EFAAA /* NetworkHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkHelper.m; sourceTree = "<group>"; };
 		13BE04FD228DA5E9001EFAAA /* NetworkService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkService.h; sourceTree = "<group>"; };
 		13BE04FE228DA5E9001EFAAA /* NetworkService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkService.m; sourceTree = "<group>"; };
 		13BE0501228DA61D001EFAAA /* NewsModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsModel.h; sourceTree = "<group>"; };
 		13BE0502228DA61D001EFAAA /* NewsModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsModel.m; sourceTree = "<group>"; };
-		13BE0507228DAD57001EFAAA /* AuthorizationRouter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AuthorizationRouter.h; sourceTree = "<group>"; };
-		13BE0508228DAD57001EFAAA /* AuthorizationRouter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AuthorizationRouter.m; sourceTree = "<group>"; };
-		13BE050A228DC2A2001EFAAA /* FirebaseAuthService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirebaseAuthService.h; sourceTree = "<group>"; };
-		13BE050B228DC2A2001EFAAA /* FirebaseAuthService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirebaseAuthService.m; sourceTree = "<group>"; };
-		13BE050D228DEE11001EFAAA /* AuthorizationView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AuthorizationView.h; sourceTree = "<group>"; };
-		13BE050E228DEE11001EFAAA /* AuthorizationView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AuthorizationView.m; sourceTree = "<group>"; };
 		13BE0515228DFA5D001EFAAA /* NewsJSONModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsJSONModel.h; sourceTree = "<group>"; };
 		13BE0516228DFA5D001EFAAA /* NewsJSONModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsJSONModel.m; sourceTree = "<group>"; };
 		13BE0519228DFFB1001EFAAA /* NewsTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsTableViewCell.h; sourceTree = "<group>"; };
@@ -152,7 +140,6 @@
 				13BE04AC228D975B001EFAAA /* AppDelegate.h */,
 				13BE04AD228D975B001EFAAA /* AppDelegate.m */,
 				13BE04F3228DA1DA001EFAAA /* News */,
-				13BE04EF228DA1A9001EFAAA /* AuthModule */,
 				13BE04B8228D975F001EFAAA /* Assets.xcassets */,
 				13BE04BA228D975F001EFAAA /* LaunchScreen.storyboard */,
 				13BE04BD228D975F001EFAAA /* Info.plist */,
@@ -179,71 +166,6 @@
 				13BE04D5228D975F001EFAAA /* Info.plist */,
 			);
 			path = SberCryptoUITests;
-			sourceTree = "<group>";
-		};
-		13BE04E8228D9A89001EFAAA /* Authorization */ = {
-			isa = PBXGroup;
-			children = (
-				13BE04EB228D9AA8001EFAAA /* Presenter */,
-				13BE04EA228D9AA0001EFAAA /* View */,
-				13BE04E9228D9A96001EFAAA /* Controller */,
-			);
-			path = Authorization;
-			sourceTree = "<group>";
-		};
-		13BE04E9228D9A96001EFAAA /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				13BE04E5228D9A7E001EFAAA /* AuthViewController.h */,
-				13BE04E6228D9A7E001EFAAA /* AuthViewController.m */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		13BE04EA228D9AA0001EFAAA /* View */ = {
-			isa = PBXGroup;
-			children = (
-				13BE050D228DEE11001EFAAA /* AuthorizationView.h */,
-				13BE050E228DEE11001EFAAA /* AuthorizationView.m */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		13BE04EB228D9AA8001EFAAA /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				13BE04EE228D9AC9001EFAAA /* Router */,
-				13BE04ED228D9ABE001EFAAA /* Service */,
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
-		13BE04ED228D9ABE001EFAAA /* Service */ = {
-			isa = PBXGroup;
-			children = (
-				13BE050A228DC2A2001EFAAA /* FirebaseAuthService.h */,
-				13BE050B228DC2A2001EFAAA /* FirebaseAuthService.m */,
-			);
-			path = Service;
-			sourceTree = "<group>";
-		};
-		13BE04EE228D9AC9001EFAAA /* Router */ = {
-			isa = PBXGroup;
-			children = (
-				13BE0507228DAD57001EFAAA /* AuthorizationRouter.h */,
-				13BE0508228DAD57001EFAAA /* AuthorizationRouter.m */,
-			);
-			path = Router;
-			sourceTree = "<group>";
-		};
-		13BE04EF228DA1A9001EFAAA /* AuthModule */ = {
-			isa = PBXGroup;
-			children = (
-				13BE04F9228DA342001EFAAA /* SignUp */,
-				13BE04F8228DA339001EFAAA /* SignIn */,
-				13BE04E8228D9A89001EFAAA /* Authorization */,
-			);
-			path = AuthModule;
 			sourceTree = "<group>";
 		};
 		13BE04F3228DA1DA001EFAAA /* News */ = {
@@ -291,20 +213,6 @@
 				13BE04FE228DA5E9001EFAAA /* NetworkService.m */,
 			);
 			path = Service;
-			sourceTree = "<group>";
-		};
-		13BE04F8228DA339001EFAAA /* SignIn */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = SignIn;
-			sourceTree = "<group>";
-		};
-		13BE04F9228DA342001EFAAA /* SignUp */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = SignUp;
 			sourceTree = "<group>";
 		};
 		13BE0500228DA60D001EFAAA /* Model */ = {
@@ -361,7 +269,6 @@
 				13BE04A5228D975B001EFAAA /* Sources */,
 				13BE04A6228D975B001EFAAA /* Frameworks */,
 				13BE04A7228D975B001EFAAA /* Resources */,
-				6A262CBFA85D2CE9E769301C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -482,28 +389,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		6A262CBFA85D2CE9E769301C /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-SberCrypto/Pods-SberCrypto-resources.sh",
-				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseFirestore/gRPCCertificates.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/gRPCCertificates.bundle",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SberCrypto/Pods-SberCrypto-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		91FA0B828D084884CE1894A2 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -577,16 +462,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				13BE04E7228D9A7E001EFAAA /* AuthViewController.m in Sources */,
 				13BE04AE228D975B001EFAAA /* AppDelegate.m in Sources */,
 				13BE04FC228DA51F001EFAAA /* NetworkHelper.m in Sources */,
 				13BE0503228DA61D001EFAAA /* NewsModel.m in Sources */,
 				13BE04BF228D975F001EFAAA /* main.m in Sources */,
 				13BE0517228DFA5D001EFAAA /* NewsJSONModel.m in Sources */,
 				13BE051E228E03C9001EFAAA /* NewsViewController.m in Sources */,
-				13BE050C228DC2A2001EFAAA /* FirebaseAuthService.m in Sources */,
-				13BE0509228DAD57001EFAAA /* AuthorizationRouter.m in Sources */,
-				13BE050F228DEE11001EFAAA /* AuthorizationView.m in Sources */,
 				13BE04FF228DA5E9001EFAAA /* NetworkService.m in Sources */,
 				13BE051B228DFFB1001EFAAA /* NewsTableViewCell.m in Sources */,
 				13BE04B7228D975B001EFAAA /* SberCrypto.xcdatamodeld in Sources */,

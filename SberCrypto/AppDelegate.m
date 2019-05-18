@@ -7,8 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "AuthViewController.h"
-@import Firebase;
+#import "NewsViewController.h"
 
 @interface AppDelegate ()
 
@@ -19,10 +18,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    [FIRApp configure];
     
     UIWindow *window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
-    AuthViewController *rootVC = [AuthViewController new];
+    NewsViewController *rootVC = [NewsViewController new];
     UINavigationController *navVC = [[UINavigationController alloc] initWithRootViewController:rootVC];
     
     window.rootViewController = navVC;

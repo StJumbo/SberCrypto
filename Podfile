@@ -7,9 +7,7 @@ target 'SberCrypto' do
 
   # Pods for SberCrypto
 
-pod 'Firebase/Core'
-pod 'Firebase/Auth'
-pod 'Firebase/Firestore'
+pod 'OCMock'
 
   target 'SberCryptoTests' do
     inherit! :search_paths

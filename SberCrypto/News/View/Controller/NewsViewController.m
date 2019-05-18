@@ -67,6 +67,7 @@
                 cropImage = [cropImage imageByCroppingToRect:CGRectMake(0.0f, 100.0f, cell.coverImageView.bounds.size.width, 200.0f)];
                 UIImage *image = [UIImage imageWithCIImage:cropImage];
                 cell.coverImageView.image = image;
+                cell.coverImageView.contentMode = UIViewContentModeScaleAspectFit;
                 self.newsArray[indexPath.item].image = image;
             });
         }];
