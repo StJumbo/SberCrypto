@@ -43,9 +43,17 @@
     for (int i = 0; i < array.count; i++)
     {
         NewsModel *news = [NewsModel new];
-        news.date = (int)array[i][@"published_on"];
+        
+        //Вот с датой я хз- с API просто приходит число, и в документации нет описания,
+        //откуда его считать. С 1970, очевидно, не работает.
+        NSDate *postDate = [NSDate dateWithTimeIntervalSince1970:(int)array[i][@"published_on"]];
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        dateFormatter.dateFormat = @"HH:mm dd MMM yyyy";
+        NSString *dateString = [dateFormatter stringFromDate:postDate];
+        news.date = [NSString stringWithFormat:@"Published on: %@", dateString];
+        
         news.ID = array[i][@"id"];
-        news.title = array[i][@"title"];
+        news.title = [NSString stringWithFormat:@"\t%@", array[i][@"title"]];
         news.imageURL = array[i][@"imageurl"];
         news.articleURL = array[i][@"url"];
         news.image = nil;

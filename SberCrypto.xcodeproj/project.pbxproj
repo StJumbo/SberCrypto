@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		13245E1722909EF80043A513 /* NewsPresenterClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 13245E1622909EF80043A513 /* NewsPresenterClass.m */; };
+		13934B132290A48900B2DDCB /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13934B122290A48900B2DDCB /* SafariServices.framework */; };
 		13BE04AE228D975B001EFAAA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BE04AD228D975B001EFAAA /* AppDelegate.m */; };
 		13BE04B7228D975B001EFAAA /* SberCrypto.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 13BE04B5228D975B001EFAAA /* SberCrypto.xcdatamodeld */; };
 		13BE04B9228D975F001EFAAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13BE04B8228D975F001EFAAA /* Assets.xcassets */; };
@@ -48,6 +49,7 @@
 /* Begin PBXFileReference section */
 		13245E1522909EF80043A513 /* NewsPresenterClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsPresenterClass.h; sourceTree = "<group>"; };
 		13245E1622909EF80043A513 /* NewsPresenterClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsPresenterClass.m; sourceTree = "<group>"; };
+		13934B122290A48900B2DDCB /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
 		13BE04A9228D975B001EFAAA /* SberCrypto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SberCrypto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13BE04AC228D975B001EFAAA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		13BE04AD228D975B001EFAAA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13934B132290A48900B2DDCB /* SafariServices.framework in Frameworks */,
 				359944B1A25A91503B9AB4D4 /* libPods-SberCrypto.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -238,6 +241,7 @@
 		3148674EBBB5B1457DF2EB57 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				13934B122290A48900B2DDCB /* SafariServices.framework */,
 				A7C8F50B686A5C629EB07B33 /* libPods-SberCrypto.a */,
 				C8B3891BCE68E13B039AB8A4 /* libPods-SberCryptoTests.a */,
 				78E292A63BDE6EBB85DE1FB3 /* libPods-SberCryptoUITests.a */,

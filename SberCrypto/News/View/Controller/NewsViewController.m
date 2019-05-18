@@ -10,8 +10,9 @@
 #import "NewsPresenterClass.h"
 #import "NewsModel.h"
 #import "NewsTableViewCell.h"
+@import SafariServices;
 
-@interface NewsViewController ()
+@interface NewsViewController () <SFSafariViewControllerDelegate>
 
 @property (nonatomic) NSMutableArray<NewsModel *> *newsArray;
 @property (nonatomic, strong) NewsPresenterClass *presenter;
@@ -25,10 +26,6 @@
     
     self.presenter = [NewsPresenterClass new];
     [self.presenter createDelegates];
-    [self.presenter getNewsArray:^(NSArray<NewsModel *> * _Nonnull newsArray) {
-        self.newsArray = [NSMutableArray arrayWithArray:newsArray];
-        [self updateTableView];
-    }];
     
     [self.tableView registerClass:[NewsTableViewCell class] forCellReuseIdentifier:NSStringFromClass([NewsTableViewCell class])];
     [self.tableView setTranslatesAutoresizingMaskIntoConstraints:NO];
@@ -36,6 +33,15 @@
     self.tableView.delegate = self;
     
     self.navigationItem.title = @"News";
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:YES];
+    [self.presenter getNewsArray:^(NSArray<NewsModel *> * _Nonnull newsArray) {
+        self.newsArray = [NSMutableArray arrayWithArray:newsArray];
+        [self updateTableView];
+    }];
 }
 
 - (void)updateTableView
@@ -57,6 +63,9 @@
     
     NewsModel *articleForCell = self.newsArray[indexPath.row];
     
+    cell.titleLabel.text = articleForCell.title;
+    cell.dateLabel.text = articleForCell.date;
+    
     if (articleForCell.image != nil)
     {
         cell.coverImageView.image = articleForCell.image;
@@ -66,7 +75,7 @@
         [self.presenter getImageFromURL:articleForCell.imageURL completion:^(UIImage * _Nonnull picture) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 CIImage *cropImage = [[CIImage alloc] initWithImage:picture options:nil];
-                cropImage = [cropImage imageByCroppingToRect:CGRectMake(0.0f, 100.0f, cell.coverImageView.bounds.size.width, 200.0f)];
+                cropImage = [cropImage imageByCroppingToRect:CGRectMake(0.0f, 0.0f + picture.size.height / 3, cell.coverImageView.bounds.size.width, 200.0f)];
                 UIImage *image = [UIImage imageWithCIImage:cropImage];
                 cell.coverImageView.image = image;
                 cell.coverImageView.contentMode = UIViewContentModeScaleAspectFit;
@@ -75,19 +84,30 @@
         }];
     }
     
-    cell.titleLabel.text = [NSString stringWithFormat:@"\t%@", articleForCell.title];
-    NSDate *postDate = [NSDate dateWithTimeIntervalSince1970:articleForCell.date];
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    dateFormatter.dateFormat = @"HH:mm dd MMM yyyy";
-    NSString *dateString = [dateFormatter stringFromDate:postDate];
-    NSString *dateTextLabel = [NSString stringWithFormat:@"Published on: %@", dateString];
-    //Вот с датой я хз- с API просто приходит число, и в документации нет описания,
-    //откуда его считать. С 1970, очевидно, не работает.
-    
-    cell.dateLabel.text = dateTextLabel;
-    [cell makeConstrainst];
-    
     return cell;
+}
+
+#pragma mark - Table view delegate
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    [self openCurrentURLinSafari:self.newsArray[indexPath.row].articleURL readingModeNeeded:YES];
+}
+
+
+#pragma mark - SFSafariServices delegate
+
+-(void)openCurrentURLinSafari: (NSString *)URL readingModeNeeded:(BOOL)readingMode
+{
+    NSURL *url = [[NSURL alloc] initWithString:URL];
+    SFSafariViewController *safariVC = [[SFSafariViewController alloc] initWithURL:url entersReaderIfAvailable:readingMode];
+    safariVC.delegate = self;
+    [self presentViewController:safariVC animated:YES completion:nil];
+}
+
+- (void)safariViewControllerDidFinish:(SFSafariViewController *)controller {
+    [self dismissViewControllerAnimated:true completion:nil];
 }
 
 @end
