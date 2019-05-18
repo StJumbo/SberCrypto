@@ -32,7 +32,8 @@
     [self.tableView setTranslatesAutoresizingMaskIntoConstraints:NO];
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
-
+    
+    self.navigationItem.title = @"News";
 }
 
 - (void)updateTableView
@@ -74,9 +75,15 @@
     }
     
     cell.titleLabel.text = [NSString stringWithFormat:@"\t%@", articleForCell.title];
-    NSString *dateString = [NSString stringWithFormat:@"Date: %@", articleForCell.date];
+    NSDate *postDate = [NSDate dateWithTimeIntervalSince1970:articleForCell.date];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    dateFormatter.dateFormat = @"HH:mm dd MMM yyyy";
+    NSString *dateString = [dateFormatter stringFromDate:postDate];
+    NSString *dateTextLabel = [NSString stringWithFormat:@"Published on: %@", dateString];
+    //Вот с датой я хз- с API просто приходит число, и в документации нет описания,
+    //откуда его считать. С 1970, очевидно, не очень хорошо работает.
     
-    cell.dateLabel.text = dateString;
+    cell.dateLabel.text = dateTextLabel;
     [cell makeConstrainst];
     
     return cell;
