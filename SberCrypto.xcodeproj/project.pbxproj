@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		13245E1722909EF80043A513 /* NewsPresenterClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 13245E1622909EF80043A513 /* NewsPresenterClass.m */; };
 		13BE04AE228D975B001EFAAA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BE04AD228D975B001EFAAA /* AppDelegate.m */; };
 		13BE04B7228D975B001EFAAA /* SberCrypto.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 13BE04B5228D975B001EFAAA /* SberCrypto.xcdatamodeld */; };
 		13BE04B9228D975F001EFAAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13BE04B8228D975F001EFAAA /* Assets.xcassets */; };
@@ -20,7 +21,6 @@
 		13BE04FC228DA51F001EFAAA /* NetworkHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BE04FB228DA51F001EFAAA /* NetworkHelper.m */; };
 		13BE04FF228DA5E9001EFAAA /* NetworkService.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BE04FE228DA5E9001EFAAA /* NetworkService.m */; };
 		13BE0503228DA61D001EFAAA /* NewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BE0502228DA61D001EFAAA /* NewsModel.m */; };
-		13BE0517228DFA5D001EFAAA /* NewsJSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BE0516228DFA5D001EFAAA /* NewsJSONModel.m */; };
 		13BE051B228DFFB1001EFAAA /* NewsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BE051A228DFFB1001EFAAA /* NewsTableViewCell.m */; };
 		13BE051E228E03C9001EFAAA /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BE051D228E03C9001EFAAA /* NewsViewController.m */; };
 		18AE9CFB2D59D0743DFF6A1F /* libPods-SberCryptoUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78E292A63BDE6EBB85DE1FB3 /* libPods-SberCryptoUITests.a */; };
@@ -46,6 +46,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		13245E1522909EF80043A513 /* NewsPresenterClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsPresenterClass.h; sourceTree = "<group>"; };
+		13245E1622909EF80043A513 /* NewsPresenterClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsPresenterClass.m; sourceTree = "<group>"; };
 		13BE04A9228D975B001EFAAA /* SberCrypto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SberCrypto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13BE04AC228D975B001EFAAA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		13BE04AD228D975B001EFAAA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -67,8 +69,6 @@
 		13BE04FE228DA5E9001EFAAA /* NetworkService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkService.m; sourceTree = "<group>"; };
 		13BE0501228DA61D001EFAAA /* NewsModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsModel.h; sourceTree = "<group>"; };
 		13BE0502228DA61D001EFAAA /* NewsModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsModel.m; sourceTree = "<group>"; };
-		13BE0515228DFA5D001EFAAA /* NewsJSONModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsJSONModel.h; sourceTree = "<group>"; };
-		13BE0516228DFA5D001EFAAA /* NewsJSONModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsJSONModel.m; sourceTree = "<group>"; };
 		13BE0519228DFFB1001EFAAA /* NewsTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsTableViewCell.h; sourceTree = "<group>"; };
 		13BE051A228DFFB1001EFAAA /* NewsTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsTableViewCell.m; sourceTree = "<group>"; };
 		13BE051C228E03C9001EFAAA /* NewsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsViewController.h; sourceTree = "<group>"; };
@@ -199,6 +199,8 @@
 		13BE04F6228DA2F7001EFAAA /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				13245E1522909EF80043A513 /* NewsPresenterClass.h */,
+				13245E1622909EF80043A513 /* NewsPresenterClass.m */,
 				13BE04F7228DA303001EFAAA /* Service */,
 			);
 			path = Presenter;
@@ -220,8 +222,6 @@
 			children = (
 				13BE0501228DA61D001EFAAA /* NewsModel.h */,
 				13BE0502228DA61D001EFAAA /* NewsModel.m */,
-				13BE0515228DFA5D001EFAAA /* NewsJSONModel.h */,
-				13BE0516228DFA5D001EFAAA /* NewsJSONModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -466,11 +466,11 @@
 				13BE04FC228DA51F001EFAAA /* NetworkHelper.m in Sources */,
 				13BE0503228DA61D001EFAAA /* NewsModel.m in Sources */,
 				13BE04BF228D975F001EFAAA /* main.m in Sources */,
-				13BE0517228DFA5D001EFAAA /* NewsJSONModel.m in Sources */,
 				13BE051E228E03C9001EFAAA /* NewsViewController.m in Sources */,
 				13BE04FF228DA5E9001EFAAA /* NetworkService.m in Sources */,
 				13BE051B228DFFB1001EFAAA /* NewsTableViewCell.m in Sources */,
 				13BE04B7228D975B001EFAAA /* SberCrypto.xcdatamodeld in Sources */,
+				13245E1722909EF80043A513 /* NewsPresenterClass.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

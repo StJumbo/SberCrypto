@@ -13,6 +13,9 @@
 
 @implementation NetworkService
 
+
+#pragma mark - Getting news list from API
+
 -(void)getNewsArray: (void (^)(NSArray<NewsModel *> *))completion
 {
     NSString *urlString = [NetworkHelper getNewsArrayURL];
@@ -27,7 +30,6 @@
         else
         {
             NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
-//            NSLog(@"%@", jsonDict);
             completion([self parseNewsJSONFromArray:jsonDict[@"Data"]]);
         }
     }];
@@ -53,6 +55,7 @@
     
     return newsArray;
 }
+
 
 #pragma mark - Getting image
 

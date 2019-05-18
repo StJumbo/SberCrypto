@@ -7,13 +7,14 @@
 //
 
 #import "NewsViewController.h"
-#import "NetworkService.h"
+#import "NewsPresenterClass.h"
 #import "NewsModel.h"
 #import "NewsTableViewCell.h"
 
 @interface NewsViewController ()
 
 @property (nonatomic) NSMutableArray<NewsModel *> *newsArray;
+@property (nonatomic, strong) NewsPresenterClass *presenter;
 
 @end
 
@@ -22,8 +23,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    NetworkService *service = [NetworkService new];
-    [service getNewsArray:^(NSArray<NewsModel *> *newsArray) {
+    self.presenter = [NewsPresenterClass new];
+    [self.presenter createDelegates];
+    [self.presenter getNewsArray:^(NSArray<NewsModel *> * _Nonnull newsArray) {
         self.newsArray = [NSMutableArray arrayWithArray:newsArray];
         [self updateTableView];
     }];
@@ -61,8 +63,7 @@
     }
     else
     {
-        NetworkService *service = [NetworkService new];
-        [service getImageFromURL:articleForCell.imageURL completion:^(UIImage * _Nonnull picture) {
+        [self.presenter getImageFromURL:articleForCell.imageURL completion:^(UIImage * _Nonnull picture) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 CIImage *cropImage = [[CIImage alloc] initWithImage:picture options:nil];
                 cropImage = [cropImage imageByCroppingToRect:CGRectMake(0.0f, 100.0f, cell.coverImageView.bounds.size.width, 200.0f)];
@@ -81,7 +82,7 @@
     NSString *dateString = [dateFormatter stringFromDate:postDate];
     NSString *dateTextLabel = [NSString stringWithFormat:@"Published on: %@", dateString];
     //Вот с датой я хз- с API просто приходит число, и в документации нет описания,
-    //откуда его считать. С 1970, очевидно, не очень хорошо работает.
+    //откуда его считать. С 1970, очевидно, не работает.
     
     cell.dateLabel.text = dateTextLabel;
     [cell makeConstrainst];
