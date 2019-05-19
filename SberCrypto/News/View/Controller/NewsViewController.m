@@ -24,23 +24,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.presenter = [NewsPresenterClass new];
-    [self.presenter createDelegates];
-    
-    [self.tableView registerClass:[NewsTableViewCell class] forCellReuseIdentifier:NSStringFromClass([NewsTableViewCell class])];
-    [self.tableView setTranslatesAutoresizingMaskIntoConstraints:NO];
-    self.tableView.dataSource = self;
-    self.tableView.delegate = self;
-    
-    UIBarButtonItem *deleteButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemTrash target:self action:@selector(deleteAllNews)];
-    
-    self.navigationItem.rightBarButtonItem = deleteButton;
-    
-    self.navigationItem.title = @"News";
-    
-    self.tableView.refreshControl = [[UIRefreshControl alloc] init];
-    [self.tableView.refreshControl addTarget:self action:@selector(refreshNews) forControlEvents:UIControlEventValueChanged];
-    
     [self updateNewsArray];
 }
 
@@ -73,6 +56,29 @@
         [self updateTableView];
     }];
     
+}
+
+
+#pragma mark - ViewController setter
+
+-(void)setProperties
+{
+    self.presenter = [NewsPresenterClass new];
+    [self.presenter createDelegates];
+    
+    [self.tableView registerClass:[NewsTableViewCell class] forCellReuseIdentifier:NSStringFromClass([NewsTableViewCell class])];
+    [self.tableView setTranslatesAutoresizingMaskIntoConstraints:NO];
+    self.tableView.dataSource = self;
+    self.tableView.delegate = self;
+    
+    UIBarButtonItem *deleteButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemTrash target:self action:@selector(deleteAllNews)];
+    
+    self.navigationItem.rightBarButtonItem = deleteButton;
+    
+    self.navigationItem.title = @"News";
+    
+    self.tableView.refreshControl = [[UIRefreshControl alloc] init];
+    [self.tableView.refreshControl addTarget:self action:@selector(refreshNews) forControlEvents:UIControlEventValueChanged];
 }
 
 #pragma mark - Table view data source

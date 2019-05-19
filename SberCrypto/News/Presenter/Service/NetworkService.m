@@ -71,28 +71,32 @@
 
 - (void)getImageFromURL:(NSString *)picURL completion:(void (^)(UIImage *))completion
 {
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:picURL]];
-    NSURLSession *session = [NSURLSession sharedSession];
     
-    NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-        if (error)
-        {
-            completion(nil);
-        }
+    dispatch_async(dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0), ^{
+        NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:picURL]];
+        NSURLSession *session = [NSURLSession sharedSession];
         
-        UIImage *image = [[UIImage alloc] initWithData:data];
-        if (image)
-        {
-            completion(image);
-        }
-        else
-        {
-            completion(nil);
-        }
+        NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+            if (error)
+            {
+                completion(nil);
+            }
+            
+            UIImage *image = [[UIImage alloc] initWithData:data];
+            if (image)
+            {
+                completion(image);
+            }
+            else
+            {
+                completion(nil);
+            }
+            
+        }];
         
-    }];
+        [dataTask resume];
+    });
     
-    [dataTask resume];
 }
 
 @end
