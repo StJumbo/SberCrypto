@@ -54,6 +54,8 @@
 -(void)deleteAllNews
 {
     [self.presenter deleteNewsFromCoreData];
+    [self.newsArray removeAllObjects];
+    [self updateTableView];
 }
 
 -(void)refreshNews
@@ -67,7 +69,7 @@
 {
     [self.presenter getNewsArray:^(NSArray<NewsModel *> * _Nonnull newsArray) {
         self.newsArray = [NSMutableArray arrayWithArray:newsArray];
-        NSLog(@"\n\n\n\n%d\n\n\n\n", self.newsArray.count);
+        NSLog(@"\n\n\n\nArticles to show: %lu", (unsigned long)self.newsArray.count);
         [self updateTableView];
     }];
     
@@ -100,7 +102,7 @@
                 cropImage = [cropImage imageByCroppingToRect:CGRectMake(0.0f, 0.0f + picture.size.height / 3, cell.coverImageView.bounds.size.width, 200.0f)];
                 UIImage *image = [UIImage imageWithCIImage:cropImage];
                 cell.coverImageView.image = image;
-                cell.coverImageView.contentMode = UIViewContentModeScaleAspectFit;
+                cell.coverImageView.contentMode = UIViewContentModeScaleAspectFill;
                 self.newsArray[indexPath.item].image = image;
             });
         }];
@@ -123,7 +125,9 @@
 -(void)openCurrentURLinSafari: (NSString *)URL readingModeNeeded:(BOOL)readingMode
 {
     NSURL *url = [[NSURL alloc] initWithString:URL];
-    SFSafariViewController *safariVC = [[SFSafariViewController alloc] initWithURL:url entersReaderIfAvailable:readingMode];
+    SFSafariViewControllerConfiguration *config = [SFSafariViewControllerConfiguration new];
+    config.entersReaderIfAvailable = YES;
+    SFSafariViewController *safariVC = [[SFSafariViewController alloc] initWithURL:url configuration:config];
     safariVC.delegate = self;
     [self presentViewController:safariVC animated:YES completion:nil];
 }

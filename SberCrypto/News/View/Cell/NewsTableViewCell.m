@@ -17,6 +17,7 @@
     if (self)
     {
         self.coverImageView = [[UIImageView alloc] init];
+        self.coverImageView.backgroundColor = UIColor.lightGrayColor;
         self.titleLabel = [[UILabel alloc] init];
         self.dateLabel = [[UILabel alloc] init];
         

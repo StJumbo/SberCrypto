@@ -88,10 +88,12 @@
 
 -(void)clearNewsCoreData
 {
-    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"NewsCoreData"];
-    NSBatchDeleteRequest *deleteRequest = [[NSBatchDeleteRequest alloc] initWithFetchRequest:request];
-    NSError *deleteError = nil;
-    [self.context.persistentStoreCoordinator executeRequest:deleteRequest withContext:self.context error:&deleteError];
+    dispatch_barrier_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"NewsCoreData"];
+        NSBatchDeleteRequest *deleteRequest = [[NSBatchDeleteRequest alloc] initWithFetchRequest:request];
+        NSError *deleteError = nil;
+        [self.context.persistentStoreCoordinator executeRequest:deleteRequest withContext:self.context error:&deleteError];
+    });
     
 }
 

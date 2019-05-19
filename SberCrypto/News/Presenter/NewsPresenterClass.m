@@ -30,26 +30,27 @@
 -(void)getNewsArray:(void (^)(NSArray<NewsModel *> * _Nonnull))completion
 {
     NSMutableArray<NewsModel *> *array = [NSMutableArray arrayWithArray:[self.coreDataDelegate getNews]];
-    for(int i = 0; i < array.count; i++)
-    {
-        NSLog(@"%@", array[i].title);
-    }
     
     [self.networkDelegate getNewsArray:^(NSArray<NewsModel *> * _Nonnull newsArray) {
         NSMutableArray<NewsModel *> *arrayForSaving = [NSMutableArray array];
         for(int i = 0; i < newsArray.count; i++)
         {
             //Находим в скачанных те, которые еще не сохранены на устройстве, сохраняем их и
-            //отображаем
+            //отображаем. Можно было бы искать по Timestamp, но он какой- то не непостоянный
             NSArray *checkingArray = [array filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"ID == %@", newsArray[i].ID]];
             if(checkingArray.count <= 0)
             {
                 [arrayForSaving addObject:newsArray[i]];
-                [array addObject:newsArray[i]];
             }
         }
-        [self.coreDataDelegate saveNews:arrayForSaving];
-        completion(array);
+        NSLog(@"\n\n\n\nNew articles: %lu",(unsigned long)arrayForSaving.count);
+        if(arrayForSaving.count > 0)
+        {
+            [self.coreDataDelegate saveNews:arrayForSaving];
+        }
+        NSMutableArray *arrayToShow = [NSMutableArray arrayWithArray:arrayForSaving];
+        [arrayToShow addObjectsFromArray:array];
+        completion(arrayToShow);
     }];
     
     
