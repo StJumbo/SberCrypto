@@ -21,8 +21,9 @@
     // Override point for customization after application launch.
     
     UIWindow *window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
+    UINavigationController *navVC = [[UINavigationController alloc] initWithRootViewController:[NewsAssembly assemblyNewsModule]];
     
-    window.rootViewController = [NewsAssembly assemblyNewsModule];
+    window.rootViewController = navVC;
     self.window = window;
     [self.window makeKeyAndVisible];
     

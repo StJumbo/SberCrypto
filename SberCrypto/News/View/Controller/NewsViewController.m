@@ -23,9 +23,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+//    [self setProperties];
     
     [self updateNewsArray];
 }
+
+
+#pragma mark - UI update
 
 -(void)updateTableView
 {
@@ -33,6 +37,9 @@
         [self.tableView reloadData];
     });
 }
+
+
+#pragma mark - Data getter
 
 -(void)deleteAllNews
 {
