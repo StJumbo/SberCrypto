@@ -15,7 +15,7 @@
 @interface NewsViewController () <SFSafariViewControllerDelegate>
 
 @property (nonatomic) NSMutableArray<NewsModel *> *newsArray;
-@property (nonatomic, strong) NewsPresenterClass *presenter;
+@property (nonatomic) NewsPresenterClass *presenter;
 
 @end
 
@@ -23,7 +23,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    [self setProperties];
     
     [self updateNewsArray];
 }
@@ -58,9 +57,10 @@
 -(void)updateNewsArray
 {
     [self.presenter getNewsArray:^(NSArray<NewsModel *> * _Nonnull newsArray) {
-        self.newsArray = [NSMutableArray arrayWithArray:newsArray];
-        NSLog(@"\n\n\n\nArticles to show: %lu", (unsigned long)self.newsArray.count);
-        [self updateTableView];
+        __weak typeof(self) weakSelf = self;
+        weakSelf.newsArray = [NSMutableArray arrayWithArray:newsArray];
+        NSLog(@"\n\n\n\nArticles to show: %lu", (unsigned long)weakSelf.newsArray.count);
+        [weakSelf updateTableView];
     }];
     
 }
@@ -111,12 +111,13 @@
     {
         [self.presenter getImageFromURL:articleForCell.imageURL completion:^(UIImage * _Nonnull picture) {
             dispatch_async(dispatch_get_main_queue(), ^{
+                __weak typeof(self) weakSelf = self;
                 CIImage *cropImage = [[CIImage alloc] initWithImage:picture options:nil];
                 cropImage = [cropImage imageByCroppingToRect:CGRectMake(0.0f, 0.0f + picture.size.height / 3, cell.coverImageView.bounds.size.width, 200.0f)];
                 UIImage *image = [UIImage imageWithCIImage:cropImage];
                 cell.coverImageView.image = image;
                 cell.coverImageView.contentMode = UIViewContentModeScaleAspectFill;
-                self.newsArray[indexPath.item].image = image;
+                weakSelf.newsArray[indexPath.item].image = image;
             });
         }];
     }

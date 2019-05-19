@@ -46,7 +46,8 @@
         NSLog(@"\n\n\n\nNew articles: %lu",(unsigned long)arrayForSaving.count);
         if(arrayForSaving.count > 0)
         {
-            [self.coreDataDelegate saveNews:arrayForSaving];
+            __weak typeof(self) weakSelf = self;
+            [weakSelf.coreDataDelegate saveNews:arrayForSaving];
         }
         NSMutableArray *arrayToShow = [NSMutableArray arrayWithArray:arrayForSaving];
         [arrayToShow addObjectsFromArray:array];

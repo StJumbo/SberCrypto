@@ -85,7 +85,8 @@
             UIImage *image = [[UIImage alloc] initWithData:data];
             if (image)
             {
-                completion(image);
+                UIImage *compressedImage = [[UIImage alloc] initWithData:UIImageJPEGRepresentation(image, 0.7)];
+                completion(compressedImage);
             }
             else
             {
