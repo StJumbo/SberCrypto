@@ -26,6 +26,8 @@
         if (error)
         {
             NSLog(@"%@", error.localizedDescription);
+            NSArray<NewsModel *> *emptyArray = [NSArray array];
+            completion(emptyArray);
         }
         else
         {

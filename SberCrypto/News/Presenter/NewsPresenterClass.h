@@ -16,6 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 -(void)createDelegates;
 -(void)getNewsArray: (void (^)(NSArray<NewsModel *> *))completion;
+-(void)saveNews:(NSArray<NewsModel *> *)newsArray;
+-(void)deleteNewsFromCoreData;
 -(void)getImageFromURL:(NSString *)picURL completion:(void (^)(UIImage *))completion;
 
 @end

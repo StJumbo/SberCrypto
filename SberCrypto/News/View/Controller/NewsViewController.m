@@ -32,23 +32,45 @@
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     
+    UIBarButtonItem *deleteButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemTrash target:self action:@selector(deleteAllNews)];
+    
+    self.navigationItem.rightBarButtonItem = deleteButton;
+    
     self.navigationItem.title = @"News";
+    
+    self.tableView.refreshControl = [[UIRefreshControl alloc] init];
+    [self.tableView.refreshControl addTarget:self action:@selector(refreshNews) forControlEvents:UIControlEventValueChanged];
+    
+    [self updateNewsArray];
 }
 
--(void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:YES];
-    [self.presenter getNewsArray:^(NSArray<NewsModel *> * _Nonnull newsArray) {
-        self.newsArray = [NSMutableArray arrayWithArray:newsArray];
-        [self updateTableView];
-    }];
-}
-
-- (void)updateTableView
+-(void)updateTableView
 {
     dispatch_async( dispatch_get_main_queue(), ^{
         [self.tableView reloadData];
     });
+}
+
+-(void)deleteAllNews
+{
+    [self.presenter deleteNewsFromCoreData];
+}
+
+-(void)refreshNews
+{
+    [self updateNewsArray];
+    
+    [self.refreshControl endRefreshing];
+}
+
+-(void)updateNewsArray
+{
+    [self.presenter getNewsArray:^(NSArray<NewsModel *> * _Nonnull newsArray) {
+        self.newsArray = [NSMutableArray arrayWithArray:newsArray];
+        NSLog(@"\n\n\n\n%d\n\n\n\n", self.newsArray.count);
+        [self updateTableView];
+    }];
+    
 }
 
 #pragma mark - Table view data source
@@ -107,7 +129,7 @@
 }
 
 - (void)safariViewControllerDidFinish:(SFSafariViewController *)controller {
-    [self dismissViewControllerAnimated:true completion:nil];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end
