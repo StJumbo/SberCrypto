@@ -1,5 +1,5 @@
 //
-//  NetworkService.h
+//  SBCNetworkService.h
 //  SberCrypto
 //
 //  Created by Сергей Грызин on 16/05/2019.
@@ -7,14 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
-@class NewsModel;
+@class SBCNewsModel;
 @import UIKit;
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NetworkService : NSObject
+@interface SBCNetworkService : NSObject
 
--(void)getNewsArray: (void (^)(NSArray<NewsModel *> *))completion;
+-(void)getNewsArray:(NSString *)url completion:(void (^)(NSArray<SBCNewsModel *> *))completion;
 -(void)getImageFromURL:(NSString *)picURL completion:(void (^)(UIImage *))completion;
 
 @end

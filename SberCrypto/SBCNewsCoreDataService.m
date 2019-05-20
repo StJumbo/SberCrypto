@@ -1,24 +1,24 @@
 //
-//  NewsCoreDataService.m
+//  SBCNewsCoreDataService.m
 //  SberCrypto
 //
 //  Created by Сергей Грызин on 19/05/2019.
 //  Copyright © 2019 Сергей Грызин. All rights reserved.
 //
 
-#import "NewsCoreDataService.h"
+#import "SBCNewsCoreDataService.h"
 #import "AppDelegate.h"
-#import "NewsCoreData+CoreDataClass.h"
-#import "NewsModel.h"
+#import "SBCNewsCoreData+CoreDataClass.h"
+#import "SBCNewsModel.h"
 @import CoreData;
 
-@interface NewsCoreDataService ()
+@interface SBCNewsCoreDataService ()
 
 @property (nonatomic, strong) NSManagedObjectContext *context;
 
 @end
 
-@implementation NewsCoreDataService
+@implementation SBCNewsCoreDataService
 
 -(void)createContext
 {
@@ -28,28 +28,30 @@
     self.context.shouldDeleteInaccessibleFaults = NO;
 }
 
--(NSArray<NewsModel *> *)getNews
+-(NSArray<SBCNewsModel *> *)getNews
 {
-    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"NewsCoreData"];
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"SBCNewsCoreData"];
     request.returnsObjectsAsFaults = NO;
     
     NSError *error = nil;
     NSArray *results = [self.context executeFetchRequest:request error:&error];
     if (!results) {
         NSLog(@"Error fetching News objects: %@\n%@", [error localizedDescription], [error userInfo]);
-        abort();
+        @throw [NSException exceptionWithName:NSGenericException
+                                       reason:@"Can't fetch News Objects"
+                                     userInfo:nil];
     }
     
-    NSArray<NewsModel *> *array = [self parseCoreDataResultToNewsModel:results];
+    NSArray<SBCNewsModel *> *array = [self parseCoreDataResultToNewsModel:results];
     return array;
 }
 
--(NSArray<NewsModel *> *)parseCoreDataResultToNewsModel:(NSArray<NewsCoreData *> *)coreDataArray
+-(NSArray<SBCNewsModel *> *)parseCoreDataResultToNewsModel:(NSArray<SBCNewsCoreData *> *)coreDataArray
 {
-    NSMutableArray<NewsModel *> *mutableNews = [[NSMutableArray alloc] initWithCapacity:coreDataArray.count];
+    NSMutableArray<SBCNewsModel *> *mutableNews = [[NSMutableArray alloc] initWithCapacity:coreDataArray.count];
     for(int i = 0; i < coreDataArray.count; i++)
     {
-        NewsModel *news = [NewsModel new];
+        SBCNewsModel *news = [SBCNewsModel new];
         news.title = coreDataArray[i].title;
         news.imageURL = coreDataArray[i].imageURL;
         news.articleURL = coreDataArray[i].articleURL;
@@ -63,12 +65,12 @@
     return mutableNews;
 }
 
--(void)saveNews:(NSArray<NewsModel *> *)newsArray
+-(void)saveNews:(NSArray<SBCNewsModel *> *)newsArray
 {
     dispatch_barrier_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         for(int i = 0; i < newsArray.count; i++)
         {
-            NewsCoreData *object = [NSEntityDescription insertNewObjectForEntityForName:@"NewsCoreData" inManagedObjectContext:self.context];
+            SBCNewsCoreData *object = [NSEntityDescription insertNewObjectForEntityForName:@"SBCNewsCoreData" inManagedObjectContext:self.context];
             object.title = newsArray[i].title;
             object.identificator = newsArray[i].ID;
             object.imageURL = newsArray[i].imageURL;
@@ -89,12 +91,11 @@
 -(void)clearNewsCoreData
 {
     dispatch_barrier_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"NewsCoreData"];
+        NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"SBCNewsCoreData"];
         NSBatchDeleteRequest *deleteRequest = [[NSBatchDeleteRequest alloc] initWithFetchRequest:request];
         NSError *deleteError = nil;
         [self.context.persistentStoreCoordinator executeRequest:deleteRequest withContext:self.context error:&deleteError];
     });
-    
 }
 
 @end

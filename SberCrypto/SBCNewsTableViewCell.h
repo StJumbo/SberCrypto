@@ -1,5 +1,5 @@
 //
-//  NewsTableViewCell.h
+//  SBCNewsTableViewCell.h
 //  SberCrypto
 //
 //  Created by Сергей Грызин on 16/05/2019.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NewsTableViewCell : UITableViewCell
+@interface SBCNewsTableViewCell : UITableViewCell
 
 @property (nonatomic, strong) UIImageView *coverImageView;
 @property (nonatomic, strong) UILabel *titleLabel;

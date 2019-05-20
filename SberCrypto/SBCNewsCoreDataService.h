@@ -1,5 +1,5 @@
 //
-//  NewsAssembly.h
+//  SBCNewsCoreDataService.h
 //  SberCrypto
 //
 //  Created by Сергей Грызин on 19/05/2019.
@@ -7,13 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
-@class NewsViewController;
+@class SBCNewsModel;
+
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NewsAssembly : NSObject
+@interface SBCNewsCoreDataService : NSObject
 
-+(NewsViewController *)assemblyNewsModule;
+-(void)createContext;
+-(NSArray<SBCNewsModel *> *)getNews;
+-(void)clearNewsCoreData;
+-(void)saveNews:(NSArray<SBCNewsModel *> *)newsArray;
 
 @end
 

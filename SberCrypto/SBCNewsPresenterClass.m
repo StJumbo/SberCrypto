@@ -1,38 +1,40 @@
 //
-//  NewsPresenterClass.m
+//  SBCNewsPresenterClass.m
 //  SberCrypto
 //
 //  Created by Сергей Грызин on 18/05/2019.
 //  Copyright © 2019 Сергей Грызин. All rights reserved.
 //
 
-#import "NewsPresenterClass.h"
-#import "NetworkService.h"
-#import "NewsModel.h"
-#import "NewsCoreDataService.h"
+#import "SBCNewsPresenterClass.h"
+#import "SBCNetworkService.h"
+#import "SBCNetworkHelper.h"
+#import "SBCNewsModel.h"
+#import "SBCNewsCoreDataService.h"
 
-@interface NewsPresenterClass ()
+@interface SBCNewsPresenterClass ()
 
-@property (nonatomic, strong) NetworkService *networkDelegate;
-@property (nonatomic, strong) NewsCoreDataService *coreDataDelegate;
+@property (nonatomic, strong) SBCNetworkService *networkDelegate;
+@property (nonatomic, strong) SBCNewsCoreDataService *coreDataDelegate;
 
 @end
 
-@implementation NewsPresenterClass
+@implementation SBCNewsPresenterClass
 
 -(void)createDelegates
 {
-    self.networkDelegate = [[NetworkService alloc] init];
-    self.coreDataDelegate = [[NewsCoreDataService alloc] init];
+    self.networkDelegate = [[SBCNetworkService alloc] init];
+    self.coreDataDelegate = [[SBCNewsCoreDataService alloc] init];
     [self.coreDataDelegate createContext];
 }
 
--(void)getNewsArray:(void (^)(NSArray<NewsModel *> * _Nonnull))completion
+-(void)getNewsArray:(void (^)(NSArray<SBCNewsModel *> * _Nonnull))completion
 {
-    NSMutableArray<NewsModel *> *array = [NSMutableArray arrayWithArray:[self.coreDataDelegate getNews]];
+    NSMutableArray<SBCNewsModel *> *array = [NSMutableArray arrayWithArray:[self.coreDataDelegate getNews]];
     
-    [self.networkDelegate getNewsArray:^(NSArray<NewsModel *> * _Nonnull newsArray) {
-        NSMutableArray<NewsModel *> *arrayForSaving = [NSMutableArray array];
+    NSString *urlString = [SBCNetworkHelper getNewsArrayURL];
+    [self.networkDelegate getNewsArray:urlString completion:^(NSArray<SBCNewsModel *> * _Nonnull newsArray) {
+        NSMutableArray<SBCNewsModel *> *arrayForSaving = [NSMutableArray array];
         for(int i = 0; i < newsArray.count; i++)
         {
             //Находим в скачанных те, которые еще не сохранены на устройстве, сохраняем их и
@@ -57,7 +59,7 @@
     
 }
 
--(void)saveNews:(NSArray<NewsModel *> *)newsArray
+-(void)saveNews:(NSArray<SBCNewsModel *> *)newsArray
 {
     [self.coreDataDelegate saveNews:newsArray];
 }

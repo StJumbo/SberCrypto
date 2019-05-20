@@ -1,5 +1,5 @@
 //
-//  NewsModel.h
+//  SBCNewsModel.h
 //  SberCrypto
 //
 //  Created by Сергей Грызин on 16/05/2019.
@@ -11,7 +11,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NewsModel : NSObject
+@interface SBCNewsModel : NSObject
 
 @property (nonatomic) NSString *title;
 @property (nonatomic) NSString *imageURL;

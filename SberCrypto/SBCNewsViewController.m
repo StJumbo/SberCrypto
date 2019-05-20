@@ -1,25 +1,25 @@
 //
-//  NewsViewController.m
+//  SBCNewsViewController.m
 //  SberCrypto
 //
 //  Created by Сергей Грызин on 16/05/2019.
 //  Copyright © 2019 Сергей Грызин. All rights reserved.
 //
 
-#import "NewsViewController.h"
-#import "NewsPresenterClass.h"
-#import "NewsModel.h"
-#import "NewsTableViewCell.h"
+#import "SBCNewsViewController.h"
+#import "SBCNewsPresenterClass.h"
+#import "SBCNewsModel.h"
+#import "SBCNewsTableViewCell.h"
 @import SafariServices;
 
-@interface NewsViewController () <SFSafariViewControllerDelegate>
+@interface SBCNewsViewController () <SFSafariViewControllerDelegate>
 
-@property (nonatomic) NSMutableArray<NewsModel *> *newsArray;
-@property (nonatomic) NewsPresenterClass *presenter;
+@property (nonatomic) NSMutableArray<SBCNewsModel *> *newsArray;
+@property (nonatomic) SBCNewsPresenterClass *presenter;
 
 @end
 
-@implementation NewsViewController
+@implementation SBCNewsViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -56,7 +56,7 @@
 
 -(void)updateNewsArray
 {
-    [self.presenter getNewsArray:^(NSArray<NewsModel *> * _Nonnull newsArray) {
+    [self.presenter getNewsArray:^(NSArray<SBCNewsModel *> * _Nonnull newsArray) {
         __weak typeof(self) weakSelf = self;
         weakSelf.newsArray = [NSMutableArray arrayWithArray:newsArray];
         NSLog(@"\n\n\n\nArticles to show: %lu", (unsigned long)weakSelf.newsArray.count);
@@ -70,10 +70,10 @@
 
 -(void)setProperties
 {
-    self.presenter = [NewsPresenterClass new];
+    self.presenter = [SBCNewsPresenterClass new];
     [self.presenter createDelegates];
     
-    [self.tableView registerClass:[NewsTableViewCell class] forCellReuseIdentifier:NSStringFromClass([NewsTableViewCell class])];
+    [self.tableView registerClass:[SBCNewsTableViewCell class] forCellReuseIdentifier:NSStringFromClass([SBCNewsTableViewCell class])];
     [self.tableView setTranslatesAutoresizingMaskIntoConstraints:NO];
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
@@ -96,9 +96,9 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NewsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([NewsTableViewCell class]) forIndexPath:indexPath];
+    SBCNewsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([SBCNewsTableViewCell class]) forIndexPath:indexPath];
     
-    NewsModel *articleForCell = self.newsArray[indexPath.row];
+    SBCNewsModel *articleForCell = self.newsArray[indexPath.row];
     
     cell.titleLabel.text = articleForCell.title;
     cell.dateLabel.text = articleForCell.date;

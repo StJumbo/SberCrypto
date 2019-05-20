@@ -1,32 +1,31 @@
 //
-//  NetworkService.m
+//  SBCNetworkService.m
 //  SberCrypto
 //
 //  Created by Сергей Грызин on 16/05/2019.
 //  Copyright © 2019 Сергей Грызин. All rights reserved.
 //
 
-#import "NetworkService.h"
-#import "NetworkHelper.h"
-#import "NewsModel.h"
+#import "SBCNetworkService.h"
+#import "SBCNetworkHelper.h"
+#import "SBCNewsModel.h"
 @import UIKit;
 
-@implementation NetworkService
+@implementation SBCNetworkService
 
 
 #pragma mark - Getting news list from API
 
--(void)getNewsArray: (void (^)(NSArray<NewsModel *> *))completion
+-(void)getNewsArray:(NSString *)url completion:(void (^)(NSArray<SBCNewsModel *> *))completion
 {
-    NSString *urlString = [NetworkHelper getNewsArrayURL];
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:urlString]];
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
     NSURLSession *session = [NSURLSession sharedSession];
     
     NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         if (error)
         {
             NSLog(@"%@", error.localizedDescription);
-            NSArray<NewsModel *> *emptyArray = [NSArray array];
+            NSArray<SBCNewsModel *> *emptyArray = [NSArray array];
             completion(emptyArray);
         }
         else
@@ -39,12 +38,12 @@
     [dataTask resume];
 }
 
-- (NSArray<NewsModel *> *)parseNewsJSONFromArray:(NSArray *)array
+- (NSArray<SBCNewsModel *> *)parseNewsJSONFromArray:(NSArray *)array
 {
-    NSMutableArray<NewsModel *> *newsArray = [NSMutableArray new];
+    NSMutableArray<SBCNewsModel *> *newsArray = [NSMutableArray new];
     for (int i = 0; i < array.count; i++)
     {
-        NewsModel *news = [NewsModel new];
+        SBCNewsModel *news = [SBCNewsModel new];
         
         //Вот с датой я хз- с API просто приходит число, и в документации нет описания,
         //откуда его считать. С 1970, очевидно, не работает.
@@ -72,7 +71,7 @@
 - (void)getImageFromURL:(NSString *)picURL completion:(void (^)(UIImage *))completion
 {
     
-    dispatch_async(dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0), ^{
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
         NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:picURL]];
         NSURLSession *session = [NSURLSession sharedSession];
         

@@ -7,27 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		13245E1722909EF80043A513 /* NewsPresenterClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 13245E1622909EF80043A513 /* NewsPresenterClass.m */; };
-		1381CE582290C9D900B6B727 /* NewsCoreData+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 1381CE562290C9D900B6B727 /* NewsCoreData+CoreDataClass.m */; };
-		1381CE592290C9D900B6B727 /* NewsCoreData+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 1381CE572290C9D900B6B727 /* NewsCoreData+CoreDataProperties.m */; };
-		1381CE5D2291C5D000B6B727 /* NewsAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 1381CE5C2291C5D000B6B727 /* NewsAssembly.m */; };
+		1355BCB62291F2E200C1FBBE /* NewsViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1355BCB52291F2E200C1FBBE /* NewsViewControllerTests.m */; };
+		1355BCB82291F45A00C1FBBE /* NewsPresenterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1355BCB72291F45A00C1FBBE /* NewsPresenterTests.m */; };
+		1355BCBA2291F9D700C1FBBE /* NewsTableViewCellTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1355BCB92291F9D700C1FBBE /* NewsTableViewCellTests.m */; };
 		13934B132290A48900B2DDCB /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13934B122290A48900B2DDCB /* SafariServices.framework */; };
-		13934B192290C29900B2DDCB /* NewsCoreDataService.m in Sources */ = {isa = PBXBuildFile; fileRef = 13934B182290C29900B2DDCB /* NewsCoreDataService.m */; };
 		13BE04AE228D975B001EFAAA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BE04AD228D975B001EFAAA /* AppDelegate.m */; };
 		13BE04B7228D975B001EFAAA /* SberCrypto.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 13BE04B5228D975B001EFAAA /* SberCrypto.xcdatamodeld */; };
 		13BE04B9228D975F001EFAAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13BE04B8228D975F001EFAAA /* Assets.xcassets */; };
 		13BE04BC228D975F001EFAAA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13BE04BA228D975F001EFAAA /* LaunchScreen.storyboard */; };
 		13BE04BF228D975F001EFAAA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BE04BE228D975F001EFAAA /* main.m */; };
-		13BE04C9228D975F001EFAAA /* SberCryptoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BE04C8228D975F001EFAAA /* SberCryptoTests.m */; };
 		13BE04D4228D975F001EFAAA /* SberCryptoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BE04D3228D975F001EFAAA /* SberCryptoUITests.m */; };
 		13BE04E2228D988C001EFAAA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 13BE04E1228D988C001EFAAA /* GoogleService-Info.plist */; };
 		13BE04E3228D988C001EFAAA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 13BE04E1228D988C001EFAAA /* GoogleService-Info.plist */; };
 		13BE04E4228D988C001EFAAA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 13BE04E1228D988C001EFAAA /* GoogleService-Info.plist */; };
-		13BE04FC228DA51F001EFAAA /* NetworkHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BE04FB228DA51F001EFAAA /* NetworkHelper.m */; };
-		13BE04FF228DA5E9001EFAAA /* NetworkService.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BE04FE228DA5E9001EFAAA /* NetworkService.m */; };
-		13BE0503228DA61D001EFAAA /* NewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BE0502228DA61D001EFAAA /* NewsModel.m */; };
-		13BE051B228DFFB1001EFAAA /* NewsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BE051A228DFFB1001EFAAA /* NewsTableViewCell.m */; };
-		13BE051E228E03C9001EFAAA /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BE051D228E03C9001EFAAA /* NewsViewController.m */; };
+		13E301A422928CDA0047AC77 /* SBCNewsCoreData+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 13E3019E22928CDA0047AC77 /* SBCNewsCoreData+CoreDataProperties.m */; };
+		13E301A522928CDA0047AC77 /* SBCNewsCoreDataService.m in Sources */ = {isa = PBXBuildFile; fileRef = 13E301A022928CDA0047AC77 /* SBCNewsCoreDataService.m */; };
+		13E301A622928CDA0047AC77 /* SBCNewsCoreData+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 13E301A122928CDA0047AC77 /* SBCNewsCoreData+CoreDataClass.m */; };
+		13E301AB22928D2E0047AC77 /* SBCNetworkService.m in Sources */ = {isa = PBXBuildFile; fileRef = 13E301A822928D2E0047AC77 /* SBCNetworkService.m */; };
+		13E301AC22928D2E0047AC77 /* SBCNetworkHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 13E301AA22928D2E0047AC77 /* SBCNetworkHelper.m */; };
+		13E301AF22928D4E0047AC77 /* SBCNewsPresenterClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 13E301AD22928D4E0047AC77 /* SBCNewsPresenterClass.m */; };
+		13E301B222928D640047AC77 /* SBCNewsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 13E301B022928D640047AC77 /* SBCNewsTableViewCell.m */; };
+		13E301B522928D7B0047AC77 /* SBCNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13E301B422928D7B0047AC77 /* SBCNewsViewController.m */; };
+		13E301B822928DCA0047AC77 /* SBCNewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 13E301B622928DCA0047AC77 /* SBCNewsModel.m */; };
+		13E301BB22928DDA0047AC77 /* SBCNewsAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 13E301BA22928DDA0047AC77 /* SBCNewsAssembly.m */; };
+		13E301CB229297300047AC77 /* SBCNewsCoreDatePropertiesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 13E301CA229297300047AC77 /* SBCNewsCoreDatePropertiesTests.m */; };
+		13E301CD22929CF50047AC77 /* SBCNewsCoreDataServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 13E301CC22929CF50047AC77 /* SBCNewsCoreDataServiceTests.m */; };
+		13E301CF2292ADA60047AC77 /* SBCNewsNetworkServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 13E301CE2292ADA60047AC77 /* SBCNewsNetworkServiceTests.m */; };
 		18AE9CFB2D59D0743DFF6A1F /* libPods-SberCryptoUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78E292A63BDE6EBB85DE1FB3 /* libPods-SberCryptoUITests.a */; };
 		359944B1A25A91503B9AB4D4 /* libPods-SberCrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A7C8F50B686A5C629EB07B33 /* libPods-SberCrypto.a */; };
 		E267D0449018AB928CAF5B4F /* libPods-SberCryptoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C8B3891BCE68E13B039AB8A4 /* libPods-SberCryptoTests.a */; };
@@ -51,17 +56,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		13245E1522909EF80043A513 /* NewsPresenterClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsPresenterClass.h; sourceTree = "<group>"; };
-		13245E1622909EF80043A513 /* NewsPresenterClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsPresenterClass.m; sourceTree = "<group>"; };
-		1381CE542290C9D900B6B727 /* NewsCoreData+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NewsCoreData+CoreDataProperties.h"; sourceTree = "<group>"; };
-		1381CE552290C9D900B6B727 /* NewsCoreData+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NewsCoreData+CoreDataClass.h"; sourceTree = "<group>"; };
-		1381CE562290C9D900B6B727 /* NewsCoreData+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NewsCoreData+CoreDataClass.m"; sourceTree = "<group>"; };
-		1381CE572290C9D900B6B727 /* NewsCoreData+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NewsCoreData+CoreDataProperties.m"; sourceTree = "<group>"; };
-		1381CE5B2291C5D000B6B727 /* NewsAssembly.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsAssembly.h; sourceTree = "<group>"; };
-		1381CE5C2291C5D000B6B727 /* NewsAssembly.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsAssembly.m; sourceTree = "<group>"; };
+		1355BCB52291F2E200C1FBBE /* NewsViewControllerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsViewControllerTests.m; sourceTree = "<group>"; };
+		1355BCB72291F45A00C1FBBE /* NewsPresenterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsPresenterTests.m; sourceTree = "<group>"; };
+		1355BCB92291F9D700C1FBBE /* NewsTableViewCellTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsTableViewCellTests.m; sourceTree = "<group>"; };
 		13934B122290A48900B2DDCB /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
-		13934B172290C29900B2DDCB /* NewsCoreDataService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsCoreDataService.h; sourceTree = "<group>"; };
-		13934B182290C29900B2DDCB /* NewsCoreDataService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsCoreDataService.m; sourceTree = "<group>"; };
 		13BE04A9228D975B001EFAAA /* SberCrypto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SberCrypto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13BE04AC228D975B001EFAAA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		13BE04AD228D975B001EFAAA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -71,22 +69,34 @@
 		13BE04BD228D975F001EFAAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		13BE04BE228D975F001EFAAA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		13BE04C4228D975F001EFAAA /* SberCryptoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SberCryptoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		13BE04C8228D975F001EFAAA /* SberCryptoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SberCryptoTests.m; sourceTree = "<group>"; };
 		13BE04CA228D975F001EFAAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		13BE04CF228D975F001EFAAA /* SberCryptoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SberCryptoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		13BE04D3228D975F001EFAAA /* SberCryptoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SberCryptoUITests.m; sourceTree = "<group>"; };
 		13BE04D5228D975F001EFAAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		13BE04E1228D988C001EFAAA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		13BE04FA228DA51F001EFAAA /* NetworkHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = NetworkHelper.h; path = ../NetworkHelper.h; sourceTree = "<group>"; };
-		13BE04FB228DA51F001EFAAA /* NetworkHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = NetworkHelper.m; path = ../NetworkHelper.m; sourceTree = "<group>"; };
-		13BE04FD228DA5E9001EFAAA /* NetworkService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = NetworkService.h; path = ../NetworkService.h; sourceTree = "<group>"; };
-		13BE04FE228DA5E9001EFAAA /* NetworkService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = NetworkService.m; path = ../NetworkService.m; sourceTree = "<group>"; };
-		13BE0501228DA61D001EFAAA /* NewsModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsModel.h; sourceTree = "<group>"; };
-		13BE0502228DA61D001EFAAA /* NewsModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsModel.m; sourceTree = "<group>"; };
-		13BE0519228DFFB1001EFAAA /* NewsTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsTableViewCell.h; sourceTree = "<group>"; };
-		13BE051A228DFFB1001EFAAA /* NewsTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsTableViewCell.m; sourceTree = "<group>"; };
-		13BE051C228E03C9001EFAAA /* NewsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsViewController.h; sourceTree = "<group>"; };
-		13BE051D228E03C9001EFAAA /* NewsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsViewController.m; sourceTree = "<group>"; };
+		13E3019E22928CDA0047AC77 /* SBCNewsCoreData+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SBCNewsCoreData+CoreDataProperties.m"; sourceTree = "<group>"; };
+		13E3019F22928CDA0047AC77 /* SBCNewsCoreDataService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBCNewsCoreDataService.h; sourceTree = "<group>"; };
+		13E301A022928CDA0047AC77 /* SBCNewsCoreDataService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBCNewsCoreDataService.m; sourceTree = "<group>"; };
+		13E301A122928CDA0047AC77 /* SBCNewsCoreData+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SBCNewsCoreData+CoreDataClass.m"; sourceTree = "<group>"; };
+		13E301A222928CDA0047AC77 /* SBCNewsCoreData+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SBCNewsCoreData+CoreDataClass.h"; sourceTree = "<group>"; };
+		13E301A322928CDA0047AC77 /* SBCNewsCoreData+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SBCNewsCoreData+CoreDataProperties.h"; sourceTree = "<group>"; };
+		13E301A722928D2E0047AC77 /* SBCNetworkService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBCNetworkService.h; sourceTree = "<group>"; };
+		13E301A822928D2E0047AC77 /* SBCNetworkService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBCNetworkService.m; sourceTree = "<group>"; };
+		13E301A922928D2E0047AC77 /* SBCNetworkHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBCNetworkHelper.h; sourceTree = "<group>"; };
+		13E301AA22928D2E0047AC77 /* SBCNetworkHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBCNetworkHelper.m; sourceTree = "<group>"; };
+		13E301AD22928D4E0047AC77 /* SBCNewsPresenterClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBCNewsPresenterClass.m; sourceTree = "<group>"; };
+		13E301AE22928D4E0047AC77 /* SBCNewsPresenterClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBCNewsPresenterClass.h; sourceTree = "<group>"; };
+		13E301B022928D640047AC77 /* SBCNewsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBCNewsTableViewCell.m; sourceTree = "<group>"; };
+		13E301B122928D640047AC77 /* SBCNewsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBCNewsTableViewCell.h; sourceTree = "<group>"; };
+		13E301B322928D7B0047AC77 /* SBCNewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBCNewsViewController.h; sourceTree = "<group>"; };
+		13E301B422928D7B0047AC77 /* SBCNewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBCNewsViewController.m; sourceTree = "<group>"; };
+		13E301B622928DCA0047AC77 /* SBCNewsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBCNewsModel.m; sourceTree = "<group>"; };
+		13E301B722928DCA0047AC77 /* SBCNewsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBCNewsModel.h; sourceTree = "<group>"; };
+		13E301B922928DDA0047AC77 /* SBCNewsAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBCNewsAssembly.h; sourceTree = "<group>"; };
+		13E301BA22928DDA0047AC77 /* SBCNewsAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBCNewsAssembly.m; sourceTree = "<group>"; };
+		13E301CA229297300047AC77 /* SBCNewsCoreDatePropertiesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBCNewsCoreDatePropertiesTests.m; sourceTree = "<group>"; };
+		13E301CC22929CF50047AC77 /* SBCNewsCoreDataServiceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBCNewsCoreDataServiceTests.m; sourceTree = "<group>"; };
+		13E301CE2292ADA60047AC77 /* SBCNewsNetworkServiceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBCNewsNetworkServiceTests.m; sourceTree = "<group>"; };
 		26E8E3722CDE87C3A7876B90 /* Pods-SberCrypto.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SberCrypto.release.xcconfig"; path = "Pods/Target Support Files/Pods-SberCrypto/Pods-SberCrypto.release.xcconfig"; sourceTree = "<group>"; };
 		78E292A63BDE6EBB85DE1FB3 /* libPods-SberCryptoUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SberCryptoUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AB53B8D08C94FE044091112 /* Pods-SberCryptoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SberCryptoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SberCryptoUITests/Pods-SberCryptoUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -127,39 +137,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1381CE532290C9BE00B6B727 /* CoreData */ = {
-			isa = PBXGroup;
-			children = (
-				1381CE542290C9D900B6B727 /* NewsCoreData+CoreDataProperties.h */,
-				1381CE552290C9D900B6B727 /* NewsCoreData+CoreDataClass.h */,
-				1381CE562290C9D900B6B727 /* NewsCoreData+CoreDataClass.m */,
-				1381CE572290C9D900B6B727 /* NewsCoreData+CoreDataProperties.m */,
-				13934B172290C29900B2DDCB /* NewsCoreDataService.h */,
-				13934B182290C29900B2DDCB /* NewsCoreDataService.m */,
-			);
-			path = CoreData;
-			sourceTree = "<group>";
-		};
-		1381CE5A2291C5A400B6B727 /* Assembly */ = {
-			isa = PBXGroup;
-			children = (
-				1381CE5B2291C5D000B6B727 /* NewsAssembly.h */,
-				1381CE5C2291C5D000B6B727 /* NewsAssembly.m */,
-			);
-			path = Assembly;
-			sourceTree = "<group>";
-		};
-		13934B1A2290C99800B2DDCB /* Network */ = {
-			isa = PBXGroup;
-			children = (
-				13BE04FA228DA51F001EFAAA /* NetworkHelper.h */,
-				13BE04FB228DA51F001EFAAA /* NetworkHelper.m */,
-				13BE04FD228DA5E9001EFAAA /* NetworkService.h */,
-				13BE04FE228DA5E9001EFAAA /* NetworkService.m */,
-			);
-			path = Network;
-			sourceTree = "<group>";
-		};
 		13BE04A0228D975A001EFAAA = {
 			isa = PBXGroup;
 			children = (
@@ -187,7 +164,7 @@
 			children = (
 				13BE04AC228D975B001EFAAA /* AppDelegate.h */,
 				13BE04AD228D975B001EFAAA /* AppDelegate.m */,
-				13BE04F3228DA1DA001EFAAA /* News */,
+				13E301BF229291530047AC77 /* News */,
 				13BE04B8228D975F001EFAAA /* Assets.xcassets */,
 				13BE04BA228D975F001EFAAA /* LaunchScreen.storyboard */,
 				13BE04BD228D975F001EFAAA /* Info.plist */,
@@ -200,7 +177,12 @@
 		13BE04C7228D975F001EFAAA /* SberCryptoTests */ = {
 			isa = PBXGroup;
 			children = (
-				13BE04C8228D975F001EFAAA /* SberCryptoTests.m */,
+				1355BCB52291F2E200C1FBBE /* NewsViewControllerTests.m */,
+				1355BCB92291F9D700C1FBBE /* NewsTableViewCellTests.m */,
+				1355BCB72291F45A00C1FBBE /* NewsPresenterTests.m */,
+				13E301CE2292ADA60047AC77 /* SBCNewsNetworkServiceTests.m */,
+				13E301CA229297300047AC77 /* SBCNewsCoreDatePropertiesTests.m */,
+				13E301CC22929CF50047AC77 /* SBCNewsCoreDataServiceTests.m */,
 				13BE04CA228D975F001EFAAA /* Info.plist */,
 				13BE04E1228D988C001EFAAA /* GoogleService-Info.plist */,
 			);
@@ -216,70 +198,103 @@
 			path = SberCryptoUITests;
 			sourceTree = "<group>";
 		};
-		13BE04F3228DA1DA001EFAAA /* News */ = {
+		13E301BF229291530047AC77 /* News */ = {
 			isa = PBXGroup;
 			children = (
-				1381CE5A2291C5A400B6B727 /* Assembly */,
-				13BE0500228DA60D001EFAAA /* Model */,
-				13BE04F6228DA2F7001EFAAA /* Presenter */,
-				13BE04F5228DA2F2001EFAAA /* View */,
+				13E301C12292918D0047AC77 /* Assembly */,
+				13E301C22292919F0047AC77 /* Presenter */,
+				13E301C3229291AC0047AC77 /* Model */,
+				13E301C7229291EB0047AC77 /* View */,
+				13E301A222928CDA0047AC77 /* SBCNewsCoreData+CoreDataClass.h */,
 			);
-			path = News;
+			name = News;
 			sourceTree = "<group>";
 		};
-		13BE04F4228DA1F2001EFAAA /* Controller */ = {
+		13E301C12292918D0047AC77 /* Assembly */ = {
 			isa = PBXGroup;
 			children = (
-				13BE051C228E03C9001EFAAA /* NewsViewController.h */,
-				13BE051D228E03C9001EFAAA /* NewsViewController.m */,
+				13E301B922928DDA0047AC77 /* SBCNewsAssembly.h */,
+				13E301BA22928DDA0047AC77 /* SBCNewsAssembly.m */,
 			);
-			path = Controller;
+			name = Assembly;
 			sourceTree = "<group>";
 		};
-		13BE04F5228DA2F2001EFAAA /* View */ = {
+		13E301C22292919F0047AC77 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				13BE0518228DFF9D001EFAAA /* Cell */,
-				13BE04F4228DA1F2001EFAAA /* Controller */,
+				13E301AE22928D4E0047AC77 /* SBCNewsPresenterClass.h */,
+				13E301AD22928D4E0047AC77 /* SBCNewsPresenterClass.m */,
+				13E301C9229292120047AC77 /* Service */,
 			);
-			path = View;
+			name = Presenter;
 			sourceTree = "<group>";
 		};
-		13BE04F6228DA2F7001EFAAA /* Presenter */ = {
+		13E301C3229291AC0047AC77 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				13245E1522909EF80043A513 /* NewsPresenterClass.h */,
-				13245E1622909EF80043A513 /* NewsPresenterClass.m */,
-				13BE04F7228DA303001EFAAA /* Service */,
+				13E301B722928DCA0047AC77 /* SBCNewsModel.h */,
+				13E301B622928DCA0047AC77 /* SBCNewsModel.m */,
 			);
-			path = Presenter;
+			name = Model;
 			sourceTree = "<group>";
 		};
-		13BE04F7228DA303001EFAAA /* Service */ = {
+		13E301C4229291BE0047AC77 /* NetworkService */ = {
 			isa = PBXGroup;
 			children = (
-				13934B1A2290C99800B2DDCB /* Network */,
-				1381CE532290C9BE00B6B727 /* CoreData */,
+				13E301A922928D2E0047AC77 /* SBCNetworkHelper.h */,
+				13E301AA22928D2E0047AC77 /* SBCNetworkHelper.m */,
+				13E301A722928D2E0047AC77 /* SBCNetworkService.h */,
+				13E301A822928D2E0047AC77 /* SBCNetworkService.m */,
 			);
-			path = Service;
+			name = NetworkService;
 			sourceTree = "<group>";
 		};
-		13BE0500228DA60D001EFAAA /* Model */ = {
+		13E301C5229291CF0047AC77 /* TableViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				13BE0501228DA61D001EFAAA /* NewsModel.h */,
-				13BE0502228DA61D001EFAAA /* NewsModel.m */,
+				13E301B122928D640047AC77 /* SBCNewsTableViewCell.h */,
+				13E301B022928D640047AC77 /* SBCNewsTableViewCell.m */,
 			);
-			path = Model;
+			name = TableViewCell;
 			sourceTree = "<group>";
 		};
-		13BE0518228DFF9D001EFAAA /* Cell */ = {
+		13E301C6229291DC0047AC77 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				13BE0519228DFFB1001EFAAA /* NewsTableViewCell.h */,
-				13BE051A228DFFB1001EFAAA /* NewsTableViewCell.m */,
+				13E301B322928D7B0047AC77 /* SBCNewsViewController.h */,
+				13E301B422928D7B0047AC77 /* SBCNewsViewController.m */,
 			);
-			path = Cell;
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		13E301C7229291EB0047AC77 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				13E301C6229291DC0047AC77 /* ViewController */,
+				13E301C5229291CF0047AC77 /* TableViewCell */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		13E301C8229291FF0047AC77 /* CoreDataService */ = {
+			isa = PBXGroup;
+			children = (
+				13E301A122928CDA0047AC77 /* SBCNewsCoreData+CoreDataClass.m */,
+				13E301A322928CDA0047AC77 /* SBCNewsCoreData+CoreDataProperties.h */,
+				13E3019E22928CDA0047AC77 /* SBCNewsCoreData+CoreDataProperties.m */,
+				13E3019F22928CDA0047AC77 /* SBCNewsCoreDataService.h */,
+				13E301A022928CDA0047AC77 /* SBCNewsCoreDataService.m */,
+			);
+			name = CoreDataService;
+			sourceTree = "<group>";
+		};
+		13E301C9229292120047AC77 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				13E301C4229291BE0047AC77 /* NetworkService */,
+				13E301C8229291FF0047AC77 /* CoreDataService */,
+			);
+			name = Service;
 			sourceTree = "<group>";
 		};
 		3148674EBBB5B1457DF2EB57 /* Frameworks */ = {
@@ -511,18 +526,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				13BE04AE228D975B001EFAAA /* AppDelegate.m in Sources */,
-				1381CE592290C9D900B6B727 /* NewsCoreData+CoreDataProperties.m in Sources */,
-				13BE04FC228DA51F001EFAAA /* NetworkHelper.m in Sources */,
-				13BE0503228DA61D001EFAAA /* NewsModel.m in Sources */,
+				13E301AC22928D2E0047AC77 /* SBCNetworkHelper.m in Sources */,
 				13BE04BF228D975F001EFAAA /* main.m in Sources */,
-				1381CE582290C9D900B6B727 /* NewsCoreData+CoreDataClass.m in Sources */,
-				13BE051E228E03C9001EFAAA /* NewsViewController.m in Sources */,
-				13BE04FF228DA5E9001EFAAA /* NetworkService.m in Sources */,
-				13BE051B228DFFB1001EFAAA /* NewsTableViewCell.m in Sources */,
+				13E301A522928CDA0047AC77 /* SBCNewsCoreDataService.m in Sources */,
+				13E301A422928CDA0047AC77 /* SBCNewsCoreData+CoreDataProperties.m in Sources */,
+				13E301B522928D7B0047AC77 /* SBCNewsViewController.m in Sources */,
 				13BE04B7228D975B001EFAAA /* SberCrypto.xcdatamodeld in Sources */,
-				13245E1722909EF80043A513 /* NewsPresenterClass.m in Sources */,
-				1381CE5D2291C5D000B6B727 /* NewsAssembly.m in Sources */,
-				13934B192290C29900B2DDCB /* NewsCoreDataService.m in Sources */,
+				13E301A622928CDA0047AC77 /* SBCNewsCoreData+CoreDataClass.m in Sources */,
+				13E301AF22928D4E0047AC77 /* SBCNewsPresenterClass.m in Sources */,
+				13E301B822928DCA0047AC77 /* SBCNewsModel.m in Sources */,
+				13E301AB22928D2E0047AC77 /* SBCNetworkService.m in Sources */,
+				13E301BB22928DDA0047AC77 /* SBCNewsAssembly.m in Sources */,
+				13E301B222928D640047AC77 /* SBCNewsTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -530,7 +545,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				13BE04C9228D975F001EFAAA /* SberCryptoTests.m in Sources */,
+				13E301CF2292ADA60047AC77 /* SBCNewsNetworkServiceTests.m in Sources */,
+				1355BCB62291F2E200C1FBBE /* NewsViewControllerTests.m in Sources */,
+				13E301CD22929CF50047AC77 /* SBCNewsCoreDataServiceTests.m in Sources */,
+				1355BCBA2291F9D700C1FBBE /* NewsTableViewCellTests.m in Sources */,
+				13E301CB229297300047AC77 /* SBCNewsCoreDatePropertiesTests.m in Sources */,
+				1355BCB82291F45A00C1FBBE /* NewsPresenterTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

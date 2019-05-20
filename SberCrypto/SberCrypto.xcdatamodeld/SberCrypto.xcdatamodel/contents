@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14490.99" systemVersion="18E226" minimumToolsVersion="Automatic" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
-    <entity name="NewsCoreData" representedClassName="NewsCoreData" syncable="YES">
+    <entity name="SBCNewsCoreData" representedClassName="SBCNewsCoreData" syncable="YES">
         <attribute name="articleURL" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="date" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="identificator" optional="YES" attributeType="String" syncable="YES"/>
@@ -8,6 +8,6 @@
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="NewsCoreData" positionX="-63" positionY="-18" width="128" height="120"/>
+        <element name="SBCNewsCoreData" positionX="0" positionY="0" width="0" height="0"/>
     </elements>
 </model>

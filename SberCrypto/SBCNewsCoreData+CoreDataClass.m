@@ -1,5 +1,5 @@
 //
-//  NewsCoreData+CoreDataClass.m
+//  SBCNewsCoreData+CoreDataClass.m
 //  SberCrypto
 //
 //  Created by Сергей Грызин on 19/05/2019.
@@ -7,8 +7,8 @@
 //
 //
 
-#import "NewsCoreData+CoreDataClass.h"
+#import "SBCNewsCoreData+CoreDataClass.h"
 
-@implementation NewsCoreData
+@implementation SBCNewsCoreData
 
 @end

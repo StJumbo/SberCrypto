@@ -1,14 +1,14 @@
 //
-//  NewsTableViewCell.m
+//  SBCNewsTableViewCell.m
 //  SberCrypto
 //
 //  Created by Сергей Грызин on 16/05/2019.
 //  Copyright © 2019 Сергей Грызин. All rights reserved.
 //
 
-#import "NewsTableViewCell.h"
+#import "SBCNewsTableViewCell.h"
 
-@implementation NewsTableViewCell
+@implementation SBCNewsTableViewCell
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {

@@ -1,5 +1,5 @@
 //
-//  NewsCoreData+CoreDataProperties.h
+//  SBCNewsCoreData+CoreDataProperties.h
 //  SberCrypto
 //
 //  Created by Сергей Грызин on 19/05/2019.
@@ -7,14 +7,14 @@
 //
 //
 
-#import "NewsCoreData+CoreDataClass.h"
+#import "SBCNewsCoreData+CoreDataClass.h"
 
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NewsCoreData (CoreDataProperties)
+@interface SBCNewsCoreData (CoreDataProperties)
 
-+ (NSFetchRequest<NewsCoreData *> *)fetchRequest;
++ (NSFetchRequest<SBCNewsCoreData *> *)fetchRequest;
 
 @property (nullable, nonatomic, copy) NSString *articleURL;
 @property (nullable, nonatomic, copy) NSString *date;

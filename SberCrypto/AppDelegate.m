@@ -7,8 +7,8 @@
 //
 
 #import "AppDelegate.h"
-#import "NewsViewController.h"
-#import "NewsAssembly.h"
+#import "SBCNewsViewController.h"
+#import "SBCNewsAssembly.h"
 
 @interface AppDelegate ()
 
@@ -21,7 +21,7 @@
     // Override point for customization after application launch.
     
     UIWindow *window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
-    UINavigationController *navVC = [[UINavigationController alloc] initWithRootViewController:[NewsAssembly assemblyNewsModule]];
+    UINavigationController *navVC = [[UINavigationController alloc] initWithRootViewController:[SBCNewsAssembly assemblyNewsModule]];
     
     window.rootViewController = navVC;
     self.window = window;

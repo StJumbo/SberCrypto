@@ -1,5 +1,5 @@
 //
-//  NewsPresenterClass.h
+//  SBCNewsPresenterClass.h
 //  SberCrypto
 //
 //  Created by Сергей Грызин on 18/05/2019.
@@ -8,15 +8,15 @@
 
 #import <Foundation/Foundation.h>
 @import UIKit;
-@class NewsModel;
+@class SBCNewsModel;
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NewsPresenterClass : NSObject
+@interface SBCNewsPresenterClass : NSObject
 
 -(void)createDelegates;
--(void)getNewsArray: (void (^)(NSArray<NewsModel *> *))completion;
--(void)saveNews:(NSArray<NewsModel *> *)newsArray;
+-(void)getNewsArray: (void (^)(NSArray<SBCNewsModel *> *))completion;
+-(void)saveNews:(NSArray<SBCNewsModel *> *)newsArray;
 -(void)deleteNewsFromCoreData;
 -(void)getImageFromURL:(NSString *)picURL completion:(void (^)(UIImage *))completion;
 
