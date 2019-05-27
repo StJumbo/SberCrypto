@@ -12,7 +12,6 @@
 
 +(NSString *)getNewsArrayURL
 {
-//    NSString *APIKey = @"113c2e990b4a2cd147b989e17a116bf63541d103d8596967af7c7c6ce781fd7e";
     return [NSString stringWithFormat:@"https://min-api.cryptocompare.com/data/v2/news/?lang=EN"];
 }
 

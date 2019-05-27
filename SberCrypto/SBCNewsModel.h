@@ -18,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *articleURL;
 @property (nonatomic, copy) NSString *ID;
 @property (nonatomic, copy) NSString *date;
-@property (nonatomic, copy, nullable) UIImage *image;
+@property (nonatomic, nullable) UIImage *image;
 
 @end
 
