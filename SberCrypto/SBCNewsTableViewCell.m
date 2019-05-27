@@ -32,6 +32,7 @@
         self.titleLabel.font = [UIFont systemFontOfSize:23.0f];
         self.dateLabel.font = [UIFont systemFontOfSize:15.0f weight:UIFontWeightLight];
     }
+    
     return self;
 }
 
@@ -65,6 +66,7 @@
     self.titleLabel.text = nil;
     self.dateLabel.text = nil;
     self.coverImageView.image = nil;
+    
     [super prepareForReuse];
 }
 

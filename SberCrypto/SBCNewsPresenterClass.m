@@ -55,8 +55,6 @@
         [arrayToShow addObjectsFromArray:array];
         completion(arrayToShow);
     }];
-    
-    
 }
 
 -(void)saveNews:(NSArray<SBCNewsModel *> *)newsArray

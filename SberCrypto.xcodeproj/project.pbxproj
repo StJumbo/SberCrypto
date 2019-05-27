@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1355BCB62291F2E200C1FBBE /* NewsViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1355BCB52291F2E200C1FBBE /* NewsViewControllerTests.m */; };
 		1355BCB82291F45A00C1FBBE /* NewsPresenterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1355BCB72291F45A00C1FBBE /* NewsPresenterTests.m */; };
 		1355BCBA2291F9D700C1FBBE /* NewsTableViewCellTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1355BCB92291F9D700C1FBBE /* NewsTableViewCellTests.m */; };
 		13934B132290A48900B2DDCB /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13934B122290A48900B2DDCB /* SafariServices.framework */; };
@@ -56,7 +55,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1355BCB52291F2E200C1FBBE /* NewsViewControllerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsViewControllerTests.m; sourceTree = "<group>"; };
 		1355BCB72291F45A00C1FBBE /* NewsPresenterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsPresenterTests.m; sourceTree = "<group>"; };
 		1355BCB92291F9D700C1FBBE /* NewsTableViewCellTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsTableViewCellTests.m; sourceTree = "<group>"; };
 		13934B122290A48900B2DDCB /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
@@ -177,7 +175,6 @@
 		13BE04C7228D975F001EFAAA /* SberCryptoTests */ = {
 			isa = PBXGroup;
 			children = (
-				1355BCB52291F2E200C1FBBE /* NewsViewControllerTests.m */,
 				1355BCB92291F9D700C1FBBE /* NewsTableViewCellTests.m */,
 				1355BCB72291F45A00C1FBBE /* NewsPresenterTests.m */,
 				13E301CE2292ADA60047AC77 /* SBCNewsNetworkServiceTests.m */,
@@ -205,7 +202,6 @@
 				13E301C22292919F0047AC77 /* Presenter */,
 				13E301C3229291AC0047AC77 /* Model */,
 				13E301C7229291EB0047AC77 /* View */,
-				13E301A222928CDA0047AC77 /* SBCNewsCoreData+CoreDataClass.h */,
 			);
 			name = News;
 			sourceTree = "<group>";
@@ -279,6 +275,7 @@
 		13E301C8229291FF0047AC77 /* CoreDataService */ = {
 			isa = PBXGroup;
 			children = (
+				13E301A222928CDA0047AC77 /* SBCNewsCoreData+CoreDataClass.h */,
 				13E301A122928CDA0047AC77 /* SBCNewsCoreData+CoreDataClass.m */,
 				13E301A322928CDA0047AC77 /* SBCNewsCoreData+CoreDataProperties.h */,
 				13E3019E22928CDA0047AC77 /* SBCNewsCoreData+CoreDataProperties.m */,
@@ -546,7 +543,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				13E301CF2292ADA60047AC77 /* SBCNewsNetworkServiceTests.m in Sources */,
-				1355BCB62291F2E200C1FBBE /* NewsViewControllerTests.m in Sources */,
 				13E301CD22929CF50047AC77 /* SBCNewsCoreDataServiceTests.m in Sources */,
 				1355BCBA2291F9D700C1FBBE /* NewsTableViewCellTests.m in Sources */,
 				13E301CB229297300047AC77 /* SBCNewsCoreDatePropertiesTests.m in Sources */,

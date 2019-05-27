@@ -51,8 +51,8 @@
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
         dateFormatter.dateFormat = @"HH:mm dd MMM yyyy";
         NSString *dateString = [dateFormatter stringFromDate:postDate];
-        news.date = [NSString stringWithFormat:@"Published on: %@", dateString];
         
+        news.date = [NSString stringWithFormat:@"Published on: %@", dateString];
         news.ID = array[i][@"id"];
         news.title = [NSString stringWithFormat:@"\t%@", array[i][@"title"]];
         news.imageURL = array[i][@"imageurl"];

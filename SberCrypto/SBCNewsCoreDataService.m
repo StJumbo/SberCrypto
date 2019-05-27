@@ -35,7 +35,8 @@
     
     NSError *error = nil;
     NSArray *results = [self.context executeFetchRequest:request error:&error];
-    if (!results) {
+    if (!results)
+    {
         NSLog(@"Error fetching News objects: %@\n%@", [error localizedDescription], [error userInfo]);
         @throw [NSException exceptionWithName:NSGenericException
                                        reason:@"Can't fetch News Objects"

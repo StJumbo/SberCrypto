@@ -14,7 +14,7 @@
 
 @interface SBCNewsViewController () <SFSafariViewControllerDelegate>
 
-@property (nonatomic) NSMutableArray<SBCNewsModel *> *newsArray;
+@property (nonatomic, copy) NSMutableArray<SBCNewsModel *> *newsArray;
 @property (nonatomic) SBCNewsPresenterClass *presenter;
 
 @end
@@ -33,12 +33,13 @@
 -(void)updateTableView
 {
     dispatch_async( dispatch_get_main_queue(), ^{
-        [self.tableView reloadData];
+        __weak typeof(self) weakSelf = self;
+        [weakSelf.tableView reloadData];
     });
 }
 
 
-#pragma mark - Data getter
+#pragma mark - News setter&getter
 
 -(void)deleteAllNews
 {
@@ -57,12 +58,10 @@
 -(void)updateNewsArray
 {
     [self.presenter getNewsArray:^(NSArray<SBCNewsModel *> * _Nonnull newsArray) {
-        __weak typeof(self) weakSelf = self;
-        weakSelf.newsArray = [NSMutableArray arrayWithArray:newsArray];
-        NSLog(@"\n\n\n\nArticles to show: %lu", (unsigned long)weakSelf.newsArray.count);
-        [weakSelf updateTableView];
+        self.newsArray = [NSMutableArray arrayWithArray:newsArray];
+        NSLog(@"\n\n\n\nArticles to show: %lu", (unsigned long)self.newsArray.count);
+        [self updateTableView];
     }];
-    
 }
 
 
@@ -87,6 +86,7 @@
     self.tableView.refreshControl = [[UIRefreshControl alloc] init];
     [self.tableView.refreshControl addTarget:self action:@selector(refreshNews) forControlEvents:UIControlEventValueChanged];
 }
+
 
 #pragma mark - Table view data source
 
@@ -124,6 +124,7 @@
     
     return cell;
 }
+
 
 #pragma mark - Table view delegate
 

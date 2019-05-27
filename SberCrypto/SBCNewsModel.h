@@ -13,12 +13,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SBCNewsModel : NSObject
 
-@property (nonatomic) NSString *title;
-@property (nonatomic) NSString *imageURL;
-@property (nonatomic) NSString *articleURL;
-@property (nonatomic) NSString *ID;
-@property (nonatomic) NSString *date;
-@property (nonatomic, nullable) UIImage *image;
+@property (nonatomic, copy) NSString *title;
+@property (nonatomic, copy) NSString *imageURL;
+@property (nonatomic, copy) NSString *articleURL;
+@property (nonatomic, copy) NSString *ID;
+@property (nonatomic, copy) NSString *date;
+@property (nonatomic, copy, nullable) UIImage *image;
 
 @end
 
