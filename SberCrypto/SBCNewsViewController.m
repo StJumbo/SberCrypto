@@ -10,16 +10,46 @@
 #import "SBCNewsPresenterClass.h"
 #import "SBCNewsModel.h"
 #import "SBCNewsTableViewCell.h"
-@import SafariServices;
 
-@interface SBCNewsViewController () <SFSafariViewControllerDelegate>
+@interface SBCNewsViewController () 
 
-@property (nonatomic, copy) NSMutableArray<SBCNewsModel *> *newsArray;
+@property (nonatomic) NSArray<SBCNewsModel *> *newsArray;
 @property (nonatomic) SBCNewsPresenterClass *presenter;
 
 @end
 
 @implementation SBCNewsViewController
+
+
+#pragma mark - ViewController init
+
+-(instancetype)init
+{
+    self = [super init];
+    if (self)
+    {
+        self.presenter = [[SBCNewsPresenterClass alloc] initWithRootController:self];
+        
+        [self.tableView registerClass:[SBCNewsTableViewCell class] forCellReuseIdentifier:NSStringFromClass([SBCNewsTableViewCell class])];
+        [self.tableView setTranslatesAutoresizingMaskIntoConstraints:NO];
+        self.tableView.dataSource = self;
+        self.tableView.delegate = self;
+        
+        UIBarButtonItem *deleteButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemTrash target:self action:@selector(deleteAllNews)];
+        
+        self.navigationItem.rightBarButtonItem = deleteButton;
+        
+        self.navigationItem.title = @"News";
+        
+        self.tableView.refreshControl = [[UIRefreshControl alloc] init];
+        [self.tableView.refreshControl addTarget:self action:@selector(pulledToRefresh) forControlEvents:UIControlEventValueChanged];
+    }
+    
+    return self;
+}
+
+
+#pragma mark - ViewController lifecycle
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -28,77 +58,56 @@
 }
 
 
-#pragma mark - UI update
-
--(void)updateTableView
-{
-    dispatch_async( dispatch_get_main_queue(), ^{
-        __weak typeof(self) weakSelf = self;
-        [weakSelf.tableView reloadData];
-    });
-}
-
-
-#pragma mark - News setter&getter
+#pragma mark - Touches handling
 
 -(void)deleteAllNews
 {
-    [self.presenter deleteNewsFromCoreData];
-    [self.newsArray removeAllObjects];
+    [self.presenter deleteButtonPressed];
+    self.newsArray = nil;
     [self updateTableView];
 }
 
--(void)refreshNews
+-(void)pulledToRefresh
 {
     [self updateNewsArray];
     
     [self.refreshControl endRefreshing];
 }
 
+
+#pragma mark - Updating data source
+
 -(void)updateNewsArray
 {
-    [self.presenter getNewsArray:^(NSArray<SBCNewsModel *> * _Nonnull newsArray) {
-        self.newsArray = [NSMutableArray arrayWithArray:newsArray];
+    [self.presenter updateNewsDataSource:^(NSArray<SBCNewsModel *> * _Nonnull newsArray) {
+        self.newsArray = newsArray;
         NSLog(@"\n\n\n\nArticles to show: %lu", (unsigned long)self.newsArray.count);
         [self updateTableView];
     }];
 }
 
 
-#pragma mark - ViewController setter
+#pragma mark - Table view UI update
 
--(void)setProperties
+-(void)updateTableView
 {
-    self.presenter = [SBCNewsPresenterClass new];
-    [self.presenter createDelegates];
-    
-    [self.tableView registerClass:[SBCNewsTableViewCell class] forCellReuseIdentifier:NSStringFromClass([SBCNewsTableViewCell class])];
-    [self.tableView setTranslatesAutoresizingMaskIntoConstraints:NO];
-    self.tableView.dataSource = self;
-    self.tableView.delegate = self;
-    
-    UIBarButtonItem *deleteButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemTrash target:self action:@selector(deleteAllNews)];
-    
-    self.navigationItem.rightBarButtonItem = deleteButton;
-    
-    self.navigationItem.title = @"News";
-    
-    self.tableView.refreshControl = [[UIRefreshControl alloc] init];
-    [self.tableView.refreshControl addTarget:self action:@selector(refreshNews) forControlEvents:UIControlEventValueChanged];
+    dispatch_async( dispatch_get_main_queue(), ^{
+        [self.tableView reloadData];
+    });
 }
 
 
 #pragma mark - Table view data source
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return self.newsArray.count;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     SBCNewsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([SBCNewsTableViewCell class]) forIndexPath:indexPath];
     
-    SBCNewsModel *articleForCell = self.newsArray[indexPath.row];
+    SBCNewsModel *articleForCell = _newsArray[indexPath.row];
     
     cell.titleLabel.text = articleForCell.title;
     cell.dateLabel.text = articleForCell.date;
@@ -111,13 +120,8 @@
     {
         [self.presenter getImageFromURL:articleForCell.imageURL completion:^(UIImage * _Nonnull picture) {
             dispatch_async(dispatch_get_main_queue(), ^{
-                __weak typeof(self) weakSelf = self;
-                CIImage *cropImage = [[CIImage alloc] initWithImage:picture options:nil];
-                cropImage = [cropImage imageByCroppingToRect:CGRectMake(0.0f, 0.0f + picture.size.height / 3, cell.coverImageView.bounds.size.width, 200.0f)];
-                UIImage *image = [UIImage imageWithCIImage:cropImage];
-                cell.coverImageView.image = image;
-                cell.coverImageView.contentMode = UIViewContentModeScaleAspectFill;
-                weakSelf.newsArray[indexPath.item].image = image;
+                cell.coverImageView.image = picture;
+                self.newsArray[indexPath.item].image = picture;
             });
         }];
     }
@@ -131,24 +135,12 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    [self openCurrentURLinSafari:self.newsArray[indexPath.row].articleURL readingModeNeeded:YES];
+    [self openArticleWithURL:self.newsArray[indexPath.row].articleURL readingModeNeed:YES];
 }
 
-
-#pragma mark - SFSafariServices delegate
-
--(void)openCurrentURLinSafari: (NSString *)URL readingModeNeeded:(BOOL)readingMode
+-(void)openArticleWithURL:(NSString *)URL readingModeNeed:(BOOL)readingMode
 {
-    NSURL *url = [[NSURL alloc] initWithString:URL];
-    SFSafariViewControllerConfiguration *config = [SFSafariViewControllerConfiguration new];
-    config.entersReaderIfAvailable = YES;
-    SFSafariViewController *safariVC = [[SFSafariViewController alloc] initWithURL:url configuration:config];
-    safariVC.delegate = self;
-    [self presentViewController:safariVC animated:YES completion:nil];
-}
-
-- (void)safariViewControllerDidFinish:(SFSafariViewController *)controller {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.presenter openURLInSafari:URL readingModeNeeded:readingMode];
 }
 
 @end

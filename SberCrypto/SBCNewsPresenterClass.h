@@ -9,16 +9,18 @@
 #import <Foundation/Foundation.h>
 @import UIKit;
 @class SBCNewsModel;
+@class SBCNewsViewController;
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SBCNewsPresenterClass : NSObject
 
--(void)createDelegates;
--(void)getNewsArray:(void (^)(NSArray<SBCNewsModel *> *))completion;
+-(instancetype)initWithRootController: (SBCNewsViewController *)rootVC;
+-(void)updateNewsDataSource:(void (^)(NSArray<SBCNewsModel *> *))completion;
+-(void)deleteButtonPressed;
 -(void)saveNews:(NSArray<SBCNewsModel *> *)newsArray;
--(void)deleteNewsFromCoreData;
 -(void)getImageFromURL:(NSString *)picURL completion:(void (^)(UIImage *))completion;
+-(void)openURLInSafari: (NSString *)URL readingModeNeeded:(BOOL)readingMode;
 
 @end
 

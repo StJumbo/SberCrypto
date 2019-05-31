@@ -11,35 +11,50 @@
 #import "SBCNetworkHelper.h"
 #import "SBCNewsModel.h"
 #import "SBCNewsCoreDataService.h"
+#import "SBCNewsRouter.h"
+#import "SBCNewsViewController.h"
 
 @interface SBCNewsPresenterClass ()
 
-@property (nonatomic, strong) SBCNetworkService *networkDelegate;
-@property (nonatomic, strong) SBCNewsCoreDataService *coreDataDelegate;
+@property (nonatomic, strong) SBCNetworkService *networkService;
+@property (nonatomic, strong) SBCNewsCoreDataService *coreDataService;
+@property (nonatomic, strong) SBCNewsRouter *router;
 
 @end
 
 @implementation SBCNewsPresenterClass
 
--(void)createDelegates
+
+#pragma mark - Init
+
+-(instancetype)initWithRootController: (SBCNewsViewController *)rootVC
 {
-    self.networkDelegate = [[SBCNetworkService alloc] init];
-    self.coreDataDelegate = [[SBCNewsCoreDataService alloc] init];
-    [self.coreDataDelegate createContext];
+    self = [super init];
+    if (self)
+    {
+        _networkService = [[SBCNetworkService alloc] init];
+        _coreDataService = [[SBCNewsCoreDataService alloc] init];
+        _router = [[SBCNewsRouter alloc] initWithRootController:rootVC];
+    }
+    return self;
 }
 
--(void)getNewsArray:(void (^)(NSArray<SBCNewsModel *> * _Nonnull))completion
+
+#pragma mark - Network Service
+
+-(void)updateNewsDataSource:(void (^)(NSArray<SBCNewsModel *> * _Nonnull))completion
 {
-    NSMutableArray<SBCNewsModel *> *array = [NSMutableArray arrayWithArray:[self.coreDataDelegate getNews]];
+    NSMutableArray<SBCNewsModel *> *arrayFromCoreData = [NSMutableArray arrayWithArray:[self.coreDataService getNews]];
     
     NSString *urlString = [SBCNetworkHelper getNewsArrayURL];
-    [self.networkDelegate getNewsArray:urlString completion:^(NSArray<SBCNewsModel *> * _Nonnull newsArray) {
+    
+    [self.networkService getNewsArray:urlString completion:^(NSArray<SBCNewsModel *> * _Nonnull newsArray) {
         NSMutableArray<SBCNewsModel *> *arrayForSaving = [NSMutableArray array];
         for(int i = 0; i < newsArray.count; i++)
         {
             //Находим в скачанных те, которые еще не сохранены на устройстве, сохраняем их и
             //отображаем. Можно было бы искать по Timestamp, но он какой- то не непостоянный
-            NSArray *checkingArray = [array filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"ID == %@", newsArray[i].ID]];
+            NSArray *checkingArray = [arrayFromCoreData filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"ID == %@", newsArray[i].ID]];
             if(checkingArray.count <= 0)
             {
                 [arrayForSaving addObject:newsArray[i]];
@@ -48,30 +63,40 @@
         NSLog(@"\n\n\n\nNew articles: %lu",(unsigned long)arrayForSaving.count);
         if(arrayForSaving.count > 0)
         {
-            __weak typeof(self) weakSelf = self;
-            [weakSelf.coreDataDelegate saveNews:arrayForSaving];
+            [self.coreDataService saveNews:arrayForSaving];
         }
+        
         NSMutableArray *arrayToShow = [NSMutableArray arrayWithArray:arrayForSaving];
-        [arrayToShow addObjectsFromArray:array];
-        completion(arrayToShow);
+        [arrayToShow addObjectsFromArray:arrayFromCoreData];
+        completion([arrayToShow copy]);
     }];
-}
-
--(void)saveNews:(NSArray<SBCNewsModel *> *)newsArray
-{
-    [self.coreDataDelegate saveNews:newsArray];
-}
-
--(void)deleteNewsFromCoreData
-{
-    [self.coreDataDelegate clearNewsCoreData];
 }
 
 -(void)getImageFromURL:(NSString *)picURL completion:(void (^)(UIImage * _Nonnull))completion
 {
-    [self.networkDelegate getImageFromURL:picURL completion:^(UIImage * _Nonnull picture) {
+    [_networkService getImageFromURL:picURL completion:^(UIImage * _Nonnull picture) {
         completion(picture);
     }];
+}
+
+
+#pragma mark - CoreData Service
+
+-(void)saveNews:(NSArray<SBCNewsModel *> *)newsArray
+{
+    [_coreDataService saveNews:newsArray];
+}
+
+-(void)deleteButtonPressed
+{
+    [_coreDataService clearNewsCoreData];
+}
+
+#pragma mark - Router
+
+-(void)openURLInSafari: (NSString *)URL readingModeNeeded:(BOOL)readingMode
+{
+    [self.router openCurrentURLinSafari:URL readingModeNeeded:readingMode];
 }
 
 

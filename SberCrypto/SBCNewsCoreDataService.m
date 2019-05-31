@@ -14,18 +14,22 @@
 
 @interface SBCNewsCoreDataService ()
 
-@property (nonatomic, strong) NSManagedObjectContext *context;
+@property (nonatomic, strong) NSPersistentContainer *persistentContainer;
 
 @end
 
 @implementation SBCNewsCoreDataService
 
--(void)createContext
+-(instancetype)init
 {
-    UIApplication *application = [UIApplication sharedApplication];
-    NSPersistentContainer *container = ((AppDelegate *)(application.delegate)).persistentContainer;
-    self.context = container.viewContext;
-    self.context.shouldDeleteInaccessibleFaults = NO;
+    self = [super init];
+    if (self)
+    {
+        UIApplication *application = [UIApplication sharedApplication];
+        self.persistentContainer = ((AppDelegate *)(application.delegate)).persistentContainer;
+        _persistentContainer.viewContext.shouldDeleteInaccessibleFaults = NO;
+    }
+    return self;
 }
 
 -(NSArray<SBCNewsModel *> *)getNews
@@ -34,10 +38,10 @@
     request.returnsObjectsAsFaults = NO;
     
     NSError *error = nil;
-    NSArray *results = [self.context executeFetchRequest:request error:&error];
+    NSArray *results = [self.persistentContainer.viewContext executeFetchRequest:request error:&error];
     if (!results)
     {
-        NSLog(@"Error fetching News objects: %@\n%@", [error localizedDescription], [error userInfo]);
+        NSLog(@"Error fetching News objects: %@\n%@", error.localizedDescription, error.userInfo);
         @throw [NSException exceptionWithName:NSGenericException
                                        reason:@"Can't fetch News Objects"
                                      userInfo:nil];
@@ -68,10 +72,10 @@
 
 -(void)saveNews:(NSArray<SBCNewsModel *> *)newsArray
 {
-    dispatch_barrier_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+    [self.persistentContainer performBackgroundTask:^(NSManagedObjectContext *context) {
         for(int i = 0; i < newsArray.count; i++)
         {
-            SBCNewsCoreData *object = [NSEntityDescription insertNewObjectForEntityForName:@"SBCNewsCoreData" inManagedObjectContext:self.context];
+            SBCNewsCoreData *object = [NSEntityDescription insertNewObjectForEntityForName:@"SBCNewsCoreData" inManagedObjectContext:self.persistentContainer.viewContext];
             object.title = newsArray[i].title;
             object.identificator = newsArray[i].ID;
             object.imageURL = newsArray[i].imageURL;
@@ -81,22 +85,22 @@
         
         NSError *error = nil;
         
-        if (![self.context save:&error])
+        if (![self.persistentContainer.viewContext save:&error])
         {
             NSLog(@"Не удалось сохранить объекты");
             NSLog(@"%@, %@", error, error.localizedDescription);
         }
-    });
+    }];
 }
 
 -(void)clearNewsCoreData
 {
-    dispatch_barrier_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+    [self.persistentContainer performBackgroundTask:^(NSManagedObjectContext * context) {
         NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"SBCNewsCoreData"];
         NSBatchDeleteRequest *deleteRequest = [[NSBatchDeleteRequest alloc] initWithFetchRequest:request];
         NSError *deleteError = nil;
-        [self.context.persistentStoreCoordinator executeRequest:deleteRequest withContext:self.context error:&deleteError];
-    });
+        [self.persistentContainer.persistentStoreCoordinator executeRequest:deleteRequest withContext:self.persistentContainer.viewContext error:&deleteError];
+    }];
 }
 
 @end

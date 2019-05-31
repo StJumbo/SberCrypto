@@ -12,7 +12,7 @@
 
 +(NSString *)getNewsArrayURL
 {
-    return [NSString stringWithFormat:@"https://min-api.cryptocompare.com/data/v2/news/?lang=EN"];
+    return @"https://min-api.cryptocompare.com/data/v2/news/?lang=EN";
 }
 
 @end

@@ -70,33 +70,31 @@
 
 - (void)getImageFromURL:(NSString *)picURL completion:(void (^)(UIImage *))completion
 {
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:picURL]];
+    NSURLSession *session = [NSURLSession sharedSession];
     
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
-        NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:picURL]];
-        NSURLSession *session = [NSURLSession sharedSession];
+    NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        if (error)
+        {
+            completion(nil);
+        }
         
-        NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-            if (error)
-            {
-                completion(nil);
-            }
-            
-            UIImage *image = [[UIImage alloc] initWithData:data];
-            if (image)
-            {
-                UIImage *compressedImage = [[UIImage alloc] initWithData:UIImageJPEGRepresentation(image, 0.7)];
-                completion(compressedImage);
-            }
-            else
-            {
-                completion(nil);
-            }
-            
-        }];
+        UIImage *image = [[UIImage alloc] initWithData:data];
+        if (image)
+        {
+            UIImage *compressedImage = [[UIImage alloc] initWithData:UIImageJPEGRepresentation(image, 0.7)];
+            CIImage *cropImage = [[CIImage alloc] initWithImage:compressedImage options:nil];
+            cropImage = [cropImage imageByCroppingToRect:CGRectMake(0.0f, 0.0f + compressedImage.size.height / 3, UIScreen.mainScreen.bounds.size.width, 200.0f)];
+            UIImage *croppedImage = [UIImage imageWithCIImage:cropImage];
+            completion(croppedImage);
+        }
+        else
+        {
+            completion(nil);
+        }
         
-        [dataTask resume];
-    });
-    
+    }];
+    [dataTask resume];
 }
 
 @end

@@ -11,11 +11,11 @@
 #import "SBCNewsCoreData+CoreDataProperties.h"
 
 
-@interface SBCNewsCoreDatePropertiesTests : XCTestCase
+@interface SBCNewsCoreDataPropertiesTests : XCTestCase
 
 @end
 
-@implementation SBCNewsCoreDatePropertiesTests
+@implementation SBCNewsCoreDataPropertiesTests
 
 - (void)testFetchRequest {
     id mockSBCNewsProperties = [OCMockObject mockForClass:[SBCNewsCoreData class]];

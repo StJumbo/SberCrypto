@@ -14,7 +14,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SBCNewsCoreDataService : NSObject
 
--(void)createContext;
 -(NSArray<SBCNewsModel *> *)getNews;
 -(void)clearNewsCoreData;
 -(void)saveNews:(NSArray<SBCNewsModel *> *)newsArray;

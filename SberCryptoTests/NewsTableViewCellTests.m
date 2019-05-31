@@ -20,12 +20,14 @@
 
 - (void)setUp
 {
-    self.cell = [SBCNewsTableViewCell new];
+    [super setUp];
+    _cell = [SBCNewsTableViewCell new];
 }
 
 - (void)tearDown
 {
     self.cell = nil;
+    [super tearDown];
 }
 
 - (void)testPrepareForReuse

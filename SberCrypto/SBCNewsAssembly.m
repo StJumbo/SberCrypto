@@ -15,7 +15,6 @@
 +(SBCNewsViewController *)assemblyNewsModule
 {
     SBCNewsViewController *newsVC = [SBCNewsViewController new];
-    [newsVC setProperties];
     return newsVC;
 }
 

@@ -11,6 +11,9 @@
 #import "SBCNewsPresenterClass.h"
 #import "SBCNewsCoreDataService.h"
 #import "SBCNetworkService.h"
+#import "SBCNewsRouter.h"
+#import "SBCNewsViewController.h"
+@import SafariServices;
 
 @interface NewsPresenterTests : XCTestCase
 
@@ -20,23 +23,21 @@
 
 @implementation NewsPresenterTests
 
-- (void)setUp
+-(void)setUp
 {
     [super setUp];
     self.presenter = OCMPartialMock([SBCNewsPresenterClass new]);
-    [self.presenter createDelegates];
 }
 
-- (void)tearDown
+-(void)tearDown
 {
     self.presenter = nil;
     [super tearDown];
 }
 
-- (void)testSaveNewsCallMethod
+-(void)testSaveNewsCallMethod
 {
     SBCNewsCoreDataService *service = [SBCNewsCoreDataService new];
-    [service createContext];
     
     OCMExpect([service saveNews:@[]]);
     
@@ -45,16 +46,25 @@
     OCMVerify([service saveNews:@[]]);
 }
 
-- (void)testDeleteNewsCallMethod
+-(void)testDeleteNewsCallMethod
 {
     SBCNewsCoreDataService *service = [SBCNewsCoreDataService new];
-    [service createContext];
     
     OCMExpect([service clearNewsCoreData]);
     
-    [self.presenter deleteNewsFromCoreData];
+    [self.presenter deleteButtonPressed];
     
     OCMVerify([service clearNewsCoreData]);
+}
+
+-(void)testOpenInSafariMethod
+{
+    SBCNewsRouter *router = [SBCNewsRouter new];
+    OCMExpect([router openCurrentURLinSafari:@"https://yandex.ru/" readingModeNeeded:NO]);
+    
+    [self.presenter openURLInSafari:@"https://yandex.ru/" readingModeNeeded:NO];
+    
+    OCMVerify([router openCurrentURLinSafari:@"https://yandex.ru/" readingModeNeeded:NO]);
 }
 
 @end

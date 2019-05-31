@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		130EA6FE22A16C510029BF2E /* SBCNewsRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 130EA6FD22A16C510029BF2E /* SBCNewsRouter.m */; };
 		1355BCB82291F45A00C1FBBE /* NewsPresenterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1355BCB72291F45A00C1FBBE /* NewsPresenterTests.m */; };
 		1355BCBA2291F9D700C1FBBE /* NewsTableViewCellTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1355BCB92291F9D700C1FBBE /* NewsTableViewCellTests.m */; };
 		13934B132290A48900B2DDCB /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13934B122290A48900B2DDCB /* SafariServices.framework */; };
@@ -55,6 +56,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		130EA6FC22A16C510029BF2E /* SBCNewsRouter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBCNewsRouter.h; sourceTree = "<group>"; };
+		130EA6FD22A16C510029BF2E /* SBCNewsRouter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBCNewsRouter.m; sourceTree = "<group>"; };
 		1355BCB72291F45A00C1FBBE /* NewsPresenterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsPresenterTests.m; sourceTree = "<group>"; };
 		1355BCB92291F9D700C1FBBE /* NewsTableViewCellTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsTableViewCellTests.m; sourceTree = "<group>"; };
 		13934B122290A48900B2DDCB /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
@@ -135,6 +138,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		130EA6FB22A16C390029BF2E /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				130EA6FC22A16C510029BF2E /* SBCNewsRouter.h */,
+				130EA6FD22A16C510029BF2E /* SBCNewsRouter.m */,
+			);
+			name = Router;
+			sourceTree = "<group>";
+		};
 		13BE04A0228D975A001EFAAA = {
 			isa = PBXGroup;
 			children = (
@@ -220,6 +232,7 @@
 			children = (
 				13E301AE22928D4E0047AC77 /* SBCNewsPresenterClass.h */,
 				13E301AD22928D4E0047AC77 /* SBCNewsPresenterClass.m */,
+				130EA6FB22A16C390029BF2E /* Router */,
 				13E301C9229292120047AC77 /* Service */,
 			);
 			name = Presenter;
@@ -522,6 +535,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				130EA6FE22A16C510029BF2E /* SBCNewsRouter.m in Sources */,
 				13BE04AE228D975B001EFAAA /* AppDelegate.m in Sources */,
 				13E301AC22928D2E0047AC77 /* SBCNetworkHelper.m in Sources */,
 				13BE04BF228D975F001EFAAA /* main.m in Sources */,

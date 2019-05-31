@@ -12,8 +12,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SBCNewsViewController : UITableViewController
 
--(void)setProperties;
-
 @end
 
 NS_ASSUME_NONNULL_END
