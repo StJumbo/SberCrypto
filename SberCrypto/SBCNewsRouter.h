@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SBCNewsRouter : NSObject
 
--(instancetype)initWithRootController: (SBCNewsViewController *)navVC;
+-(instancetype)initWithParentController: (SBCNewsViewController *)navVC;
 -(void)openCurrentURLinSafari: (NSString *)URL readingModeNeeded:(BOOL)readingMode;
 
 @end

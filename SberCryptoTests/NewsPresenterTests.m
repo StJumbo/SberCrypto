@@ -1,5 +1,5 @@
 //
-//  NewsPresenterTests.m
+//  SBCNewsPresenterTests.m
 //  SberCryptoTests
 //
 //  Created by Сергей Грызин on 19/05/2019.
@@ -15,13 +15,13 @@
 #import "SBCNewsViewController.h"
 @import SafariServices;
 
-@interface NewsPresenterTests : XCTestCase
+@interface SBCNewsPresenterTests : XCTestCase
 
 @property (nonatomic, strong) SBCNewsPresenterClass *presenter;
 
 @end
 
-@implementation NewsPresenterTests
+@implementation SBCNewsPresenterTests
 
 -(void)setUp
 {

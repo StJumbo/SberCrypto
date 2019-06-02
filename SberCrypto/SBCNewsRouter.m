@@ -12,7 +12,7 @@
 
 @interface SBCNewsRouter () <SFSafariViewControllerDelegate>
 
-@property (nonatomic, weak) SBCNewsViewController *rootVC;
+@property (nonatomic, weak) SBCNewsViewController *parentVC;
 
 @end
 
@@ -21,13 +21,13 @@
 
 #pragma mark - Custom init
 
--(instancetype)initWithRootController: (SBCNewsViewController *)rootVC
+-(instancetype)initWithParentController: (SBCNewsViewController *)parentVC
 {
     //Navigation Controller почему- то равен nil, хотя я его явно задаю в AppDelegate.
     //Поэтому решил таким образом показывать статьи в Safari
     self = [super init];
     if (self) {
-        self.rootVC = rootVC;
+        self.parentVC = parentVC;
     }
     return self;
 }
@@ -42,11 +42,11 @@
     config.entersReaderIfAvailable = readingMode;
     SFSafariViewController *safariVC = [[SFSafariViewController alloc] initWithURL:url configuration:config];
     safariVC.delegate = self;
-    [self.rootVC presentViewController:safariVC animated:YES completion:nil];
+    [self.parentVC presentViewController:safariVC animated:YES completion:nil];
 }
 
 -(void)safariViewControllerDidFinish:(SFSafariViewController *)controller {
-    [self.rootVC dismissViewControllerAnimated:YES completion:nil];
+    [self.parentVC dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

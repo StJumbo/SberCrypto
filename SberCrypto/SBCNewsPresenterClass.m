@@ -34,7 +34,7 @@
     {
         _networkService = [[SBCNetworkService alloc] init];
         _coreDataService = [[SBCNewsCoreDataService alloc] init];
-        _router = [[SBCNewsRouter alloc] initWithRootController:rootVC];
+        _router = [[SBCNewsRouter alloc] initWithParentController:rootVC];
     }
     return self;
 }

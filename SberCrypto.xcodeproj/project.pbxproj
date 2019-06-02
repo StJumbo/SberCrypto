@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		130EA6FE22A16C510029BF2E /* SBCNewsRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 130EA6FD22A16C510029BF2E /* SBCNewsRouter.m */; };
+		130EA70022A40C4A0029BF2E /* SBCNewsAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 130EA6FF22A40C4A0029BF2E /* SBCNewsAssemblyTests.m */; };
 		1355BCB82291F45A00C1FBBE /* NewsPresenterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1355BCB72291F45A00C1FBBE /* NewsPresenterTests.m */; };
 		1355BCBA2291F9D700C1FBBE /* NewsTableViewCellTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1355BCB92291F9D700C1FBBE /* NewsTableViewCellTests.m */; };
 		13934B132290A48900B2DDCB /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13934B122290A48900B2DDCB /* SafariServices.framework */; };
@@ -58,6 +59,7 @@
 /* Begin PBXFileReference section */
 		130EA6FC22A16C510029BF2E /* SBCNewsRouter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBCNewsRouter.h; sourceTree = "<group>"; };
 		130EA6FD22A16C510029BF2E /* SBCNewsRouter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBCNewsRouter.m; sourceTree = "<group>"; };
+		130EA6FF22A40C4A0029BF2E /* SBCNewsAssemblyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBCNewsAssemblyTests.m; sourceTree = "<group>"; };
 		1355BCB72291F45A00C1FBBE /* NewsPresenterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsPresenterTests.m; sourceTree = "<group>"; };
 		1355BCB92291F9D700C1FBBE /* NewsTableViewCellTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsTableViewCellTests.m; sourceTree = "<group>"; };
 		13934B122290A48900B2DDCB /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
@@ -188,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				1355BCB92291F9D700C1FBBE /* NewsTableViewCellTests.m */,
+				130EA6FF22A40C4A0029BF2E /* SBCNewsAssemblyTests.m */,
 				1355BCB72291F45A00C1FBBE /* NewsPresenterTests.m */,
 				13E301CE2292ADA60047AC77 /* SBCNewsNetworkServiceTests.m */,
 				13E301CA229297300047AC77 /* SBCNewsCoreDatePropertiesTests.m */,
@@ -559,6 +562,7 @@
 				13E301CF2292ADA60047AC77 /* SBCNewsNetworkServiceTests.m in Sources */,
 				13E301CD22929CF50047AC77 /* SBCNewsCoreDataServiceTests.m in Sources */,
 				1355BCBA2291F9D700C1FBBE /* NewsTableViewCellTests.m in Sources */,
+				130EA70022A40C4A0029BF2E /* SBCNewsAssemblyTests.m in Sources */,
 				13E301CB229297300047AC77 /* SBCNewsCoreDatePropertiesTests.m in Sources */,
 				1355BCB82291F45A00C1FBBE /* NewsPresenterTests.m in Sources */,
 			);

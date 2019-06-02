@@ -1,5 +1,5 @@
 //
-//  NewsTableViewCellTests.m
+//  SBCNewsTableViewCellTests.m
 //  SberCryptoTests
 //
 //  Created by Сергей Грызин on 19/05/2019.
@@ -10,13 +10,13 @@
 #import <OCMock/OCMock.h>
 #import "SBCNewsTableViewCell.h"
 
-@interface NewsTableViewCellTests : XCTestCase
+@interface SBCNewsTableViewCellTests : XCTestCase
 
 @property (nonatomic, strong) SBCNewsTableViewCell *cell;
 
 @end
 
-@implementation NewsTableViewCellTests
+@implementation SBCNewsTableViewCellTests
 
 - (void)setUp
 {

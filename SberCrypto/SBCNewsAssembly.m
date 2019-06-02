@@ -8,7 +8,6 @@
 
 #import "SBCNewsAssembly.h"
 #import "SBCNewsViewController.h"
-#import "SBCNewsPresenterClass.h"
 
 @implementation SBCNewsAssembly
 
